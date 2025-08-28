@@ -1,181 +1,309 @@
-
-# claude-tasks-workflow
-
-This repository contains a set of structured task and meeting prompt templates used by a "Claude"-style assistant integration. The templates live under the `.claude/commands/` tree and generate or guide files under `.claude/tasks/` for specific task IDs. The templates describe project workflows (analysis, planning, implementation), meeting briefs, CI checks, documentation updates, Jira updates, and handoffs.
-
-Use this README as a concise reference for the available commands, the task lifecycle, file layout, and how to use or extend the templates.
-
-## Quick checklist (requirements mapping)
-
-- Document the repository and describe all claude command templates: Done (this README)
-
-- Explain how to use the commands and the expected files they create: Done
-
-- Provide examples and common workflows: Done
-
-## Repository layout (important paths)
-
-- `.claude/commands/` — markdown prompt templates grouped by category (project/task/meeting/workflow/docs/ci/jira etc.)
-
-- `.claude/tasks/` — generated per-task folders (created when commands run)
-
-Examples present in this repo (non-exhaustive):
-
-- `.claude/commands/project/task/init.md` — initialize a new task (create task folder + analysis.md)
-
-- `.claude/commands/project/task/analyze.md` — analysis-phase guidance (root cause, evidence)
-
-- `.claude/commands/project/task/plan.md` — planning-phase guidance (architecture, file mapping, tests)
-
-- `.claude/commands/project/task/implement.md` — implementation-phase guidance
-
-- `.claude/commands/project/task/validate.md` — validation/QA guidance
-
-- `.claude/commands/project/task/status.md` — produce a status update for a task
-
-- `.claude/commands/project/meeting/standup-brief.md` — create a technical standup brief
-
-- `.claude/commands/project/workflow/handoff.md` — handoff checklist and handoff.md template
-
-- `.claude/commands/project/jira/update.md` — guidance for updating Jira tickets
-
-- `.claude/commands/project/ci/validate.md` — CI/CD validation checklist
-
-- `.claude/commands/project/docs/update.md` — update project docs & decision logs
-
-- `.claude/commands/project/sprint/planning.md` — sprint planning readiness analysis
-
-There are similarly named templates for backlog, cancel, reject, status-change, tech review, code walkthrough, stakeholder notifications, and docs maintenance.
-
-## Purpose of the templates
-
-Each markdown file under `.claude/commands/` is a template that instructs an assistant how to execute a specific project-related task. They are authored as structured prompts that include:
-
-- Expected arguments (commonly a TASK-ID or short description)
-
-- Preconditions and phase gates (e.g., "analysis must be complete")
-
-- Step-by-step deliverables and required files
-
-- Checklists and output file names (e.g., `analysis.md`, `plan.md`, `handoff.md`)
-
-These templates are intended to standardize task workflows and reduce context loss between handoffs.
-
-## Typical task lifecycle (recommended)
-
-1. Initialize task
-
-   - Use `project/task/init.md`. This creates `.claude/tasks/[TASK-ID]/` and an `analysis.md` skeleton and sets the status to Analysis Phase.
-
-2. Analysis
-
-   - Run `project/task/analyze.md` to produce `analysis.md` that documents root cause, system impact, and risk.
-
-3. Planning
-
-   - Run `project/task/plan.md` to create `plan.md` with architecture, file-change mapping, test strategy, and rollback plan.
-
-4. Implementation
-
-   - Follow `project/task/implement.md` to carry out changes with a clear per-file plan and tests.
-
-5. Validation
-
-   - Use `project/task/validate.md` and `project/ci/validate.md` to ensure tests/CI pass and documentation is updated.
-
-6. Handoff / Close
-
-   - Use `project/workflow/handoff.md` to create `handoff.md` and transfer knowledge to next owner.
-
-These phases may be run via your assistant integration (e.g., invoking the template and passing a task id) or by manually using the templates as authoring guides.
-
-## How to use the templates (manual / assistant-driven)
-
-1. Choose the command template you need from `.claude/commands/`.
-
-2. Provide the TASK-ID or short argument (templates expect `$ARGUMENTS` or similar placeholder in their body).
-
-3. If your integration supports automatically executing templates, point the assistant to the template and pass the argument. The assistant will respond with generated content and a recommended output file path (e.g., `.claude/tasks/<TASK-ID>/analysis.md`).
-
-4. If running manually: copy the generated content into the correct path under `.claude/tasks/[TASK-ID]/` and commit the files.
-
-Minimal manual example (create an analysis file):
-
-1. Create a task directory:
-
-   - `.claude/tasks/TASK-123/analysis.md`
-
-2. Use `project/task/analyze.md` as the authoring checklist and populate `analysis.md` with:
-
-   - Root cause, evidence, affected components, and risk level.
-
-3. Continue to `plan.md` and so on.
-
-## Example assistant invocation pattern
-
-These templates are written to be used by an assistant; a typical conversational invocation might look like:
-
-- "Run the task analyze command for TASK-123 and produce `analysis.md`."
-
-- "Create a standup brief for TASK-123."
-
-The assistant should fill the template (based on the `.md` file) and return the completed text which you then save under the task folder.
-
-## File naming & deliverable conventions
-
-- `.claude/tasks/[TASK-ID]/analysis.md` — analysis phase
-
-- `.claude/tasks/[TASK-ID]/plan.md` — implementation plan and file-by-file changes
-
-- `.claude/tasks/[TASK-ID]/standup-briefing.md` — short presentation/standup guide
-
-- `.claude/tasks/[TASK-ID]/handoff.md` — handoff details
-
-- Additional files: `implementation.md`, `validation.md`, `status.md`, etc., as the templates prescribe.
-
-## Extending or adding new commands
-
-1. Add a new `.md` file under `.claude/commands/<category>/`.
-
-2. Follow the existing template style: include the command title, argument placeholders, prerequisites, step-by-step deliverables, file names to produce, and a short checklist.
-
-3. If your assistant integration has a command registry, register the new template if required.
-
-## Best practices
-
-- Always include a TASK-ID and keep the same ID folder throughout the lifecycle.
-
-- Never change code during the Analysis phase — use `analysis.md` for investigation only.
-
-- Keep deliverables small and focused (one plan per task).
-
-- Use the `plan.md` file to list exact file changes and tests required.
+# Claude Tasks Workflow
+
+A structured prompt-based workflow system for managing software development tasks using Claude AI assistant. This repository provides standardized templates for task analysis, planning, implementation, and handoffs that maintain consistency and reduce context loss across project phases.
+
+## Overview
+
+The Claude Tasks Workflow transforms how development teams manage tasks by providing:
+
+- **Structured Templates**: Markdown-based prompts that guide Claude through specific project phases
+- **Consistent Documentation**: Standardized outputs for analysis, planning, and handoffs
+- **Context Preservation**: Rich documentation that maintains technical context across team members
+- **Phase-Gate Management**: Clear progression from analysis through implementation to validation
+
+## Repository Structure
+
+```
+.claude/
+├── commands/                    # Template library
+│   ├── project/
+│   │   ├── task/               # Core task lifecycle templates
+│   │   │   ├── init.md         # Initialize new task
+│   │   │   ├── analyze.md      # Root cause analysis
+│   │   │   ├── plan.md         # Implementation planning
+│   │   │   ├── implement.md    # Development guidance
+│   │   │   ├── validate.md     # QA validation
+│   │   │   └── status.md       # Status reporting
+│   │   ├── meeting/            # Meeting facilitation
+│   │   │   ├── standup-brief.md
+│   │   │   └── tech-review.md
+│   │   ├── workflow/           # Process management
+│   │   │   ├── handoff.md
+│   │   │   └── cancel.md
+│   │   ├── jira/              # Integration templates
+│   │   ├── ci/                # CI/CD validation
+│   │   └── docs/              # Documentation updates
+│   └── tasks/                  # Generated task folders
+│       └── [TASK-ID]/         # Per-task documentation
+│           ├── analysis.md
+│           ├── plan.md
+│           ├── handoff.md
+│           └── ...
+```
+
+## Quick Start
+
+### 1. Initialize a New Task
+
+With Claude, use the init template:
+```
+"Run the task init command for UGP-1234 to set up the analysis phase."
+```
+
+This creates `.claude/tasks/UGP-1234/` with initial `analysis.md`.
+
+### 2. Analyze the Issue
+
+```
+"Run the task analyze command for UGP-1234 and complete the root cause analysis."
+```
+
+Generates comprehensive technical analysis with:
+- Root cause identification
+- System impact assessment
+- Risk evaluation
+- Evidence documentation
+
+### 3. Create Implementation Plan
+
+```
+"Run the task plan command for UGP-1234 to create the implementation strategy."
+```
+
+Produces detailed `plan.md` with:
+- Architecture approach
+- File-by-file change mapping
+- Test strategy
+- Performance considerations
+
+### 4. Execute and Validate
+
+Follow implementation and validation templates for consistent delivery.
+
+## Core Task Lifecycle
+
+```mermaid
+graph LR
+    A[Init] --> B[Analyze]
+    B --> C[Plan]
+    C --> D[Implement]
+    D --> E[Validate]
+    E --> F[Handoff]
+    
+    B -.-> G[Status Updates]
+    C -.-> G
+    D -.-> G
+    E -.-> G
+```
+
+### Phase Gates
+
+- **Analysis → Planning**: Root cause identified, system impact documented
+- **Planning → Implementation**: Architecture approved, file changes mapped
+- **Implementation → Validation**: Code complete, tests passing
+- **Validation → Handoff**: QA complete, documentation updated
+
+## Template Categories
+
+### Core Task Management
+- `init.md` - Task initialization and folder setup
+- `analyze.md` - Technical root cause analysis
+- `plan.md` - Implementation architecture and strategy
+- `implement.md` - Development execution guidance
+- `validate.md` - Quality assurance validation
+
+### Meeting Support
+- `standup-brief.md` - Technical standup presentations
+- `tech-review.md` - Architecture review preparation
+
+### Process Management
+- `handoff.md` - Knowledge transfer documentation
+- `status.md` - Progress reporting and updates
+- `cancel.md` - Task cancellation procedures
+
+### Integration
+- `jira/update.md` - Ticket management
+- `ci/validate.md` - CI/CD pipeline validation
+- `docs/update.md` - Documentation maintenance
+
+## Usage Patterns
+
+### With Claude Assistant
+
+**Direct Command Execution:**
+```
+"Use the analyze template for PROJ-456 to investigate the database connection timeout issue."
+```
+
+**Contextual Analysis:**
+```
+"I need to plan the implementation for UGP-789. The analysis shows the issue is in the authentication middleware. Create a detailed plan.md."
+```
+
+### Manual Template Usage
+
+1. Copy template content from `.claude/commands/`
+2. Replace `$ARGUMENTS` with your task ID
+3. Follow the structured checklist
+4. Save output to `.claude/tasks/[TASK-ID]/[deliverable].md`
+
+## File Naming Conventions
+
+| Phase | File | Purpose |
+|-------|------|---------|
+| Analysis | `analysis.md` | Root cause and impact assessment |
+| Planning | `plan.md` | Implementation strategy and file mapping |
+| Implementation | `implementation.md` | Development progress tracking |
+| Validation | `validation.md` | QA results and test coverage |
+| Handoff | `handoff.md` | Knowledge transfer documentation |
+| Status | `status.md` | Progress summaries and updates |
+
+## Integration Examples
+
+### Jira Workflow
+```
+"Update Jira ticket UGP-1234 based on the completed analysis and planning phases."
+```
+
+### CI/CD Integration
+```
+"Run CI validation for UGP-1234 and update the validation.md with results."
+```
+
+### Documentation Updates
+```
+"Update project documentation based on the architectural changes in UGP-1234."
+```
+
+## Best Practices
+
+### Documentation Standards
+- **Always include TASK-ID** in folder names and file references
+- **One task per folder** - maintain clear separation
+- **Phase-based progression** - complete each phase before advancing
+- **Rich context preservation** - document decisions and rationale
+
+### Claude Interaction
+- **Be specific** - Reference exact template names and task IDs
+- **Provide context** - Share relevant technical details
+- **Iterate incrementally** - Use templates to build comprehensive documentation
+- **Maintain consistency** - Follow established naming conventions
+
+### Team Collaboration
+- **Shared task folders** - All team members can access task documentation
+- **Handoff preparation** - Use handoff.md for knowledge transfer
+- **Status transparency** - Regular status.md updates for stakeholders
+
+## Customization
+
+### Adding New Templates
+
+1. Create new `.md` file in appropriate `.claude/commands/` subdirectory
+2. Follow existing template structure:
+   - Clear title and purpose
+   - Argument placeholders (`$TASK_ID`, `$DESCRIPTION`)
+   - Prerequisites and phase gates
+   - Step-by-step deliverables
+   - Output file specifications
+
+### Template Structure Example
+```markdown
+# Template Title
+
+## Arguments
+- `$TASK_ID` - Unique task identifier
+- `$DESCRIPTION` - Brief task description
+
+## Prerequisites
+- [ ] Previous phase completed
+- [ ] Required files exist
+
+## Deliverables
+1. Analysis of X
+2. Documentation of Y
+3. Output to `.claude/tasks/$TASK_ID/deliverable.md`
+
+## Checklist
+- [ ] Requirement 1
+- [ ] Requirement 2
+```
+
+### Project-Specific Adaptations
+
+Modify templates to include:
+- Project-specific file paths
+- Custom validation requirements
+- Specialized documentation formats
+- Integration with existing tools
+
+## Advanced Workflows
+
+### Multi-Task Dependencies
+```
+"Analyze the dependency chain between UGP-1234 and UGP-1235, then create coordinated implementation plans."
+```
+
+### Architectural Reviews
+```
+"Prepare a technical review presentation for UGP-1234 focusing on the database migration strategy."
+```
+
+### Risk Assessment
+```
+"Evaluate the risks in UGP-1234 implementation plan and suggest mitigation strategies."
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**Missing Task Folder**
+- Solution: Run `init.md` template first to create proper structure
+
+**Incomplete Phase Documentation**
+- Solution: Use appropriate phase template to fill documentation gaps
+
+**Context Loss During Handoffs**
+- Solution: Complete `handoff.md` with comprehensive technical context
+
+### Template Debugging
+
+- Verify argument substitution (`$TASK_ID` replacement)
+- Check file path existence
+- Validate prerequisite completion
+- Ensure proper markdown formatting
 
 ## Contributing
 
-- Add, improve, or clarify templates in `.claude/commands/`.
+### Template Improvements
+- Enhance existing templates with better structure
+- Add validation checklists
+- Improve Claude instruction clarity
 
-- Keep templates generic and tool-agnostic so they can be used with different assistants.
+### New Template Development
+- Follow established naming conventions
+- Include comprehensive documentation
+- Test with actual Claude interactions
+- Provide usage examples
 
-## Notes and assumptions
+### Documentation Updates
+- Keep README current with template additions
+- Document new workflow patterns
+- Share best practices and lessons learned
 
-- These templates are prompt-based guidance; actual execution depends on your assistant/integration and any automation you add. This repo does not include an execution engine — it holds the templates and generated task files.
+## License
 
-- If you want CLI automation, consider adding a small script that:
+MIT License - See LICENSE file for details
 
-  1. Accepts a template path and TASK-ID
+## Support
 
-  2. Runs the template through a preferred assistant API
+For questions, issues, or contributions:
+- Create GitHub issues for bugs or feature requests
+- Submit pull requests for template improvements
+- Share workflow examples and best practices
 
-  3. Writes the assistant output to `.claude/tasks/[TASK-ID]/<deliverable>.md`
+---
 
-## Contact / Owner
-
-- Repository: `vik407/claude-tasks-workflow`
-
-
-If you'd like, I can also:
-
-- generate a simple CLI wrapper script to run a template and save outputs, or
-
-- produce a STATUS badge and task template generator to automate folder creation.
+**Version**: 1.0  
+**Last Updated**: August 2025  
+**Compatibility**: Claude Sonnet 4, Claude Opus 4
