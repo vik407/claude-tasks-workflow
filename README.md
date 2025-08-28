@@ -293,7 +293,7 @@ Modify templates to include:
 
 ## License
 
-MIT License - See LICENSE file for details
+Apache 2 License - See LICENSE file for details
 
 ## Support
 
