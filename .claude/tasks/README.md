@@ -1,0 +1,1 @@
+# Auto generated folders and documents are created by claude here
