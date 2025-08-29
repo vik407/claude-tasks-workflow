@@ -1,23 +1,65 @@
-Update Jira ticket with workflow status: $ARGUMENTS
+Update Jira ticket with contextually-aware workflow status: $ARGUMENTS
 
-JIRA UPDATE PROCESS:
+PROJECT-AWARE JIRA INTEGRATION:
 
-1. **Status Mapping** - Map workflow status to Jira workflow
-2. **Comment Generation** - Create appropriate Jira comments
-3. **Stakeholder Notification** - Determine who should be notified
-4. **Technical Details** - Add technical information if appropriate
+1. **Dynamic Status Mapping** - Map workflow status to project's Jira configuration
+2. **Context-Rich Comments** - Generate comments with project-specific technical context
+3. **Intelligent Stakeholder Notification** - Auto-identify relevant team members based on codebase analysis
+4. **Technical Context Integration** - Include relevant code references, performance metrics, and integration points
 
-JIRA COMMENT TYPES:
-**For Stakeholders**: Business-friendly status updates
-**For Developers**: Technical details and implementation notes
-**For Project Managers**: Timeline and resource impact information
+ADAPTIVE JIRA COMMENT GENERATION:
 
-JIRA STATUS MAPPINGS:
+**For Business Stakeholders**:
 
-- Analysis Complete → "In Review"
-- Plan Approved → "Ready for Development"  
-- Plan Rejected → "Backlog" or "Cancelled"
-- Implementation Complete → "Ready for Testing"
-- Blocked → "Blocked" with dependency details
+- User impact and business value delivered
+- Feature completeness with acceptance criteria status
+- Risk assessment with business impact analysis
 
-Generate Jira updates that provide appropriate context for different audiences.
+**For Technical Team Members**:
+
+- Implementation approach with architectural decisions
+- Code quality metrics and test coverage status
+- Performance impact and technical debt considerations
+- Integration points and dependency analysis
+
+**For Project Managers**:
+
+- Timeline adherence with complexity-adjusted estimates
+- Resource utilization and team coordination needs
+- Risk factors with mitigation strategies
+- Scope changes and their impact on delivery
+
+**For QA/Testing Teams**:
+
+- Testing requirements with coverage analysis
+- Environment setup and configuration needs
+- Acceptance criteria validation status
+- Regression testing considerations
+
+INTELLIGENT STATUS MAPPINGS:
+
+Auto-detect project's Jira configuration and map accordingly:
+
+- Analysis Complete → "In Review" or "Technical Review"
+- Plan Approved → "Ready for Development" or "Sprint Ready"
+- Plan Rejected → "Backlog" or "Needs Refinement"
+- Implementation Complete → "Ready for Testing" or "Code Review"
+- Validation Complete → "Ready for Deployment" or "Done"
+- Blocked → "Blocked" with dependency details and resolution timeline
+
+CONTEXT-ENHANCED UPDATES:
+
+- **Code References**: Include specific file paths and line numbers for technical discussions
+- **Architecture Impact**: Describe system-wide implications of changes
+- **Performance Metrics**: Include measurable impact on system performance
+- **Integration Status**: Update on external system dependencies and API changes
+- **Quality Gates**: Report on code quality, security scans, and compliance checks
+
+AUTO-GENERATED ATTACHMENTS:
+
+- Technical summary documents for complex changes
+- Test coverage reports and quality metrics
+- Architecture diagrams for significant design changes
+- Performance benchmark comparisons
+
+Generate Jira updates that seamlessly integrate technical work with project management workflows.

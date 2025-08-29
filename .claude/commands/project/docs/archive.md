@@ -18,10 +18,10 @@ ARCHIVAL CHECKLIST:
 
 ARCHIVE STRUCTURE:
 .claude/
-├── tasks/              # Active tasks
-├── archive/           # Completed tasks
-│   └── [YYYY-MM]/       # Monthly organization
-│       └── [TASK-ID]/  # Archived task
-└── examples/          # Extracted patterns
+├── tasks/ # Active tasks
+├── archive/ # Completed tasks
+│ └── [YYYY-MM]/ # Monthly organization
+│ └── [TASK-ID]/ # Archived task
+└── examples/ # Extracted patterns
 
 Create complete knowledge archive while cleaning active workspace.

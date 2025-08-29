@@ -4,7 +4,7 @@ PLAN REJECTION SCENARIOS:
 
 - Business priority changed - task no longer relevant
 - Technical approach deemed too risky
-- Resource constraints - not feasible in current timeline  
+- Resource constraints - not feasible in current timeline
 - Requirements clarification needed
 - Dependencies not yet available
 - Better alternative solution identified

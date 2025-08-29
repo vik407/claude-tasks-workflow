@@ -1,19 +1,37 @@
-Initialize Jira task workflow for: $ARGUMENTS
+Initialize contextually-aware task workflow for: $ARGUMENTS
 
 WORKFLOW: Three-phase task development (Analysis → Planning → Implementation)
+
+PROJECT CONTEXT INTEGRATION:
+
+1. **Auto-detect project structure** - Analyze package.json, build tools, frameworks
+2. **Identify existing patterns** - Review code conventions, testing approaches, architecture
+3. **Map team processes** - Understand documentation standards, review practices
+4. **Assess integration points** - Identify affected systems and dependencies
 
 SETUP REQUIRED:
 
 1. Create .claude/tasks/[TASK-ID]/ directory structure
-2. Generate analysis.md from template
-3. Set task status to "Analysis Phase"
-4. Validate task ID format and Jira connection
+2. Generate analysis.md with project-specific context
+3. Create project-context.md with discovered patterns and tools
+4. Set task status to "Analysis Phase"
+5. Validate task ID format and external system connections
+
+CONTEXT INJECTION CHECKLIST:
+
+- [ ] Technology stack identified and documented
+- [ ] Code style and conventions mapped
+- [ ] Testing frameworks and patterns identified
+- [ ] Build and deployment processes understood
+- [ ] Team communication patterns established
+- [ ] Quality gates and validation tools configured
 
 RESTRICTIONS:
 
 - NO code changes allowed during initialization
 - MUST complete analysis phase before planning
 - Document all assumptions and constraints
+- Include project-specific considerations in all documentation
 
-Begin Phase 1 analysis following .claude/workflows/analysis-template.md
-Focus on root cause investigation, not just symptom fixes.
+Automatically invoke task-analyzer sub-agent for comprehensive analysis.
+Focus on root cause investigation with project context integration.

@@ -8,7 +8,7 @@ Generate all meeting documentation types in a single command for complete task c
 MEETING TYPES GENERATED:
 
 1. **Standup Brief** - Quick status for daily standups (2-5 minutes)
-2. **Technical Review** - Deep dive for architecture discussions (30+ minutes)  
+2. **Technical Review** - Deep dive for architecture discussions (30+ minutes)
 3. **Code Walkthrough** - Implementation details for development meetings (15-20 minutes)
 4. **Executive Summary** - High-level overview for stakeholder updates (5 minutes)
 

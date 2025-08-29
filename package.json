@@ -1,0 +1,48 @@
+{
+  "name": "claude-tasks-workflow",
+  "version": "2.0.0",
+  "description": "Intelligent, context-aware workflow system for managing software development tasks using Claude AI sub-agents",
+  "main": "index.js",
+  "scripts": {
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore '.claude/tasks/**'",
+    "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --ignore '.claude/tasks/**' --fix",
+    "format:md": "prettier --write '**/*.md' --ignore-path .gitignore",
+    "format:check": "prettier --check '**/*.md' --ignore-path .gitignore",
+    "validate": "npm run lint:md && npm run format:check",
+    "validate:fix": "npm run lint:md:fix && npm run format:md",
+    "docs:build": "npm run validate:fix",
+    "docs:validate": "npm run validate",
+    "test:structure": "node scripts/validate-structure.js",
+    "test:subagents": "node scripts/validate-subagents.js",
+    "test": "npm run docs:validate && npm run test:structure && npm run test:subagents"
+  },
+  "keywords": [
+    "claude",
+    "ai",
+    "workflow",
+    "sub-agents",
+    "development",
+    "task-management",
+    "automation",
+    "documentation",
+    "project-management"
+  ],
+  "author": "Development Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "markdownlint": "^0.34.0",
+    "markdownlint-cli": "^0.41.0",
+    "prettier": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/claude-tasks-workflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/claude-tasks-workflow/issues"
+  },
+  "homepage": "https://github.com/your-org/claude-tasks-workflow#readme"
+}
