@@ -22,7 +22,7 @@ PREPARATION DELIVERABLES:
 MEETING TYPES SUPPORTED:
 
 - **Standup** - Quick technical status updates
-- **Sprint Review** - Comprehensive progress presentation  
+- **Sprint Review** - Comprehensive progress presentation
 - **Architecture Review** - Deep technical design discussion
 - **Stakeholder Update** - Business-focused progress communication
 - **Code Review** - Implementation-focused technical walkthrough

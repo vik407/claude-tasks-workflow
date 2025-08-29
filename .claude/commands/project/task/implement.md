@@ -4,13 +4,13 @@ IMPLEMENTATION MODE DETECTION:
 Parse arguments for implementation mode:
 
 - **AUTO**: AI implements all changes automatically (e.g., "/project:task:implement UGP-8177 AUTO")
-- **GUIDED**: AI provides step-by-step instructions for developer (e.g., "/project:task:implement UGP-8177 GUIDED")  
+- **GUIDED**: AI provides step-by-step instructions for developer (e.g., "/project:task:implement UGP-8177 GUIDED")
 - **Default**: If no mode specified, default to GUIDED mode
 
 PREREQUISITES CHECK:
 
 - ✅ Analysis complete (.claude/tasks/[TASK-ID]/analysis.md exists)
-- ✅ Plan approved (.claude/tasks/[TASK-ID]/plan.md exists)  
+- ✅ Plan approved (.claude/tasks/[TASK-ID]/plan.md exists)
 - ✅ File changes mapped and risk assessed
 
 ## AUTO MODE Implementation
@@ -30,7 +30,7 @@ PREREQUISITES CHECK:
 - Complete test execution and results
 - Validation report with quality metrics
 
-## GUIDED MODE Implementation  
+## GUIDED MODE Implementation
 
 **When GUIDED mode specified or default:**
 
@@ -90,7 +90,7 @@ After developer implements each step:
 - `.claude/tasks/[TASK-ID]/auto-implementation.md` - AI implementation log
 - `.claude/tasks/[TASK-ID]/validation.md` - Automated test results and quality metrics
 
-### GUIDED Mode Files:  
+### GUIDED Mode Files:
 
 - `.claude/tasks/[TASK-ID]/implementation-guide.md` - Step-by-step developer instructions
 - `.claude/tasks/[TASK-ID]/dev-implementation.md` - Developer progress tracking and sign-offs

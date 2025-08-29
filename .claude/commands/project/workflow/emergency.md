@@ -3,7 +3,7 @@ Emergency workflow override for task: $ARGUMENTS
 EMERGENCY CONDITIONS (use only when):
 
 - Production system down
-- Data loss occurring  
+- Data loss occurring
 - Security breach in progress
 - Critical business operation blocked
 

@@ -3,7 +3,7 @@ Enforce workflow gates for task: $ARGUMENTS
 GATE ENFORCEMENT RULES:
 
 1. **Analysis Gate** - No planning without complete analysis.md
-2. **Planning Gate** - No implementation without approved plan.md  
+2. **Planning Gate** - No implementation without approved plan.md
 3. **Implementation Gate** - No deployment without validation.md
 4. **Quality Gate** - All tests must pass before deployment
 
