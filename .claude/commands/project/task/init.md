@@ -4,7 +4,7 @@ WORKFLOW: Three-phase task development (Analysis → Planning → Implementation
 
 PROJECT CONTEXT INTEGRATION:
 
-1. **Auto-detect project structure** - Analyze package.json, build tools, frameworks
+1. **Auto-detect project structure** - Analyze package.json, build tools, frameworks (exclude .claude/ folder from analysis)
 2. **Identify existing patterns** - Review code conventions, testing approaches, architecture
 3. **Map team processes** - Understand documentation standards, review practices
 4. **Assess integration points** - Identify affected systems and dependencies
@@ -12,10 +12,12 @@ PROJECT CONTEXT INTEGRATION:
 SETUP REQUIRED:
 
 1. Create .claude/tasks/[TASK-ID]/ directory structure
-2. Generate analysis.md with project-specific context
-3. Create project-context.md with discovered patterns and tools
-4. Set task status to "Analysis Phase"
-5. Validate task ID format and external system connections
+2. **Include dev-notes/[TASK-ID].md** - Integrate developer context notes from Jira, discoveries, and related
+    technical documentation
+3. Generate analysis.md with project-specific context
+4. Create project-context.md with discovered patterns and tools
+5. Set task status to "Analysis Phase"
+6. Validate task ID format and external system connections
 
 CONTEXT INJECTION CHECKLIST:
 
