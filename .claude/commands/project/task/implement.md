@@ -3,8 +3,8 @@ Execute Phase 3 implementation for task: $ARGUMENTS
 IMPLEMENTATION MODE DETECTION:
 Parse arguments for implementation mode:
 
-- **AUTO**: AI implements all changes automatically (e.g., "/project:task:implement UGP-8177 AUTO")
-- **GUIDED**: AI provides step-by-step instructions for developer (e.g., "/project:task:implement UGP-8177 GUIDED")
+- **AUTO**: AI implements all changes automatically (e.g., "/project:task:implement ABC-8177 AUTO")
+- **GUIDED**: AI provides step-by-step instructions for developer (e.g., "/project:task:implement ABC-8177 GUIDED")
 - **Default**: If no mode specified, default to GUIDED mode
 
 PREREQUISITES CHECK:

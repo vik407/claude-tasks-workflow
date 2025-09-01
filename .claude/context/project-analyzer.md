@@ -1,6 +1,32 @@
 # Project Context Analyzer
 
-This document provides standardized project analysis patterns that can be referenced by sub-agents and commands to ensure consistent context injection across the workflow.
+This document provides standardized project analysis patterns that can be referenced by sub-agents and commands to
+ensure consistent context injection across the workflow.
+
+## CONTEXT CACHING
+
+Before full project analysis, check for cached context:
+
+**Cache Locations:**
+
+- .claude/project-context.md (main project cache)
+- .claude/tasks/*/project-context.md (per-task cache references)
+
+**Cache Validation:**
+
+1. Check if .claude/project-context.md exists and is recent (< 7 days)
+2. Verify tech stack hasn't changed (check package.json, requirements.txt, etc.)
+3. If cache valid: Reference existing context, focus on task-specific analysis
+4. If cache stale: Update only changed sections, preserve stable context
+
+**Selective Refresh Triggers:**
+
+- package.json/requirements.txt changes → Update dependencies section
+- New framework adoption → Update architecture section
+- Team process changes → Update patterns section
+- Infrastructure changes → Update deployment section
+
+Use cached context when available, perform delta updates when needed.
 
 ## Technology Stack Detection
 
@@ -185,4 +211,5 @@ git log --oneline -20 | grep -E "(feat|fix|docs|style|refactor|test|chore)"
 - **SOC2**: Audit trail requirements, logging standards
 - **Industry Standards**: HIPAA, PCI DSS compliance patterns
 
-This context analysis should be performed automatically by sub-agents when beginning any task to ensure project-aware decision making and implementation.
+This context analysis should be performed automatically by sub-agents when beginning any task to ensure project-aware
+decision making and implementation.
