@@ -1,8 +1,8 @@
 Change task status with appropriate communications: $ARGUMENTS
 
-Expected format: "UGP-8177 status=backlog reason=priority-changed"
-"UGP-8177 status=cancelled reason=requirements-obsolete"
-"UGP-8177 status=blocked reason=dependencies-unavailable"
+Expected format: "ABC-8177 status=backlog reason=priority-changed"
+"ABC-8177 status=cancelled reason=requirements-obsolete"
+"ABC-8177 status=blocked reason=dependencies-unavailable"
 
 STATUS CHANGE PROCESS:
 

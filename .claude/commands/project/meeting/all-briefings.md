@@ -1,6 +1,6 @@
 Generate complete meeting briefing package for task: $ARGUMENTS
 
-Format: "UGP-8177" or "UGP-8177 type=comprehensive" or "UGP-8177 meeting=standup"
+Format: "ABC-8177" or "ABC-8177 type=comprehensive" or "ABC-8177 meeting=standup"
 
 COMPREHENSIVE BRIEFING PACKAGE:
 Generate all meeting documentation types in a single command for complete task communication readiness.

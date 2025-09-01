@@ -118,32 +118,32 @@ Several commands were improved with better context injection while remaining as 
 
 ```bash
 # Analysis phase
-@task-analyzer UGP-8177
+@task-analyzer ABC-8177
 
 # Planning phase
-@task-planner UGP-8177
+@task-planner ABC-8177
 
 # Implementation phase
-@implementation-guide UGP-8177 AUTO
+@implementation-guide ABC-8177 AUTO
 
 # Communication prep
-@meeting-facilitator standup-brief UGP-8177
+@meeting-facilitator standup-brief ABC-8177
 ```
 
 ### Use Enhanced Commands:
 
 ```bash
 # Initialize with project context discovery
-/project:task:init UGP-8177
+/project:task:init ABC-8177
 
 # Get adaptive status report
-/project:task:status UGP-8177
+/project:task:status ABC-8177
 
 # Update Jira with context-rich information
-/project:jira:update UGP-8177
+/project:jira:update ABC-8177
 
 # Comprehensive CI/CD validation
-/project:ci:validate UGP-8177
+/project:ci:validate ABC-8177
 ```
 
 ## Migration Impact
