@@ -1,0 +1,15 @@
+{
+  "buildTime": "2025-09-08T15:18:50.340Z",
+  "buildVersion": "2.0.0",
+  "nodeVersion": "v22.17.0",
+  "source": "src/claude",
+  "target": "build/.claude",
+  "buildTool": "scripts/build.js",
+  "statistics": {
+    "totalFiles": 37,
+    "agents": 5,
+    "commands": 29,
+    "context": 1,
+    "knowledge": 1
+  }
+}

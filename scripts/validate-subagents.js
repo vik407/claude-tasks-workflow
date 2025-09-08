@@ -5,7 +5,7 @@ const path = require('path');
 
 console.log('🤖 Validating Claude Code sub-agents...\n');
 
-const subagentsDir = '.claude/subagents';
+const subagentsDir = '.claude/agents';
 let hasErrors = false;
 
 if (!fs.existsSync(subagentsDir)) {

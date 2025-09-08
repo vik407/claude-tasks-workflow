@@ -177,7 +177,7 @@ Intelligent context caching eliminates redundant project analysis:
 # → Creates cached .claude/project-context.md
 
 # Subsequent tasks: Instant context reuse
-/project:task:init ABC-1240 "add dashboard export feature"  
+/project:task:init ABC-1240 "add dashboard export feature"
 # → References cached context, starts immediately
 
 # Selective context refresh when needed
@@ -231,13 +231,13 @@ graph TB
     H -.-> C
     H -.-> D
     H -.-> E
-    
+
     I["📈 task-updater<br/>(Delta Updates)"] -.-> B
     I -.-> C
     I -.-> D
-    
+
     J["🎯 Simple Task Path<br/>(Streamlined Workflow)"] -.-> D
-    
+
     K["🧪 Knowledge Base<br/>(Accumulated Wisdom)"] -.-> B
     K -.-> C
 ```
@@ -374,7 +374,7 @@ graph TB
 ```bash
 # Batch of simple tasks with optimized workflows
 /project:task:simple ABC-3001 "update privacy policy link in footer"
-/project:task:simple ABC-3002 "change error message color from red to orange"  
+/project:task:simple ABC-3002 "change error message color from red to orange"
 /project:task:simple ABC-3003 "update API endpoint URL in configuration"
 
 # Each gets 15-minute streamlined workflow instead of full analysis
@@ -398,12 +398,34 @@ graph TB
 
 ## Advanced Workflow Patterns
 
+## Developer scripts
+
+Use the npm scripts to run repository checks and prepare a distribution build. These commands centralize formatting and lint fixes so contributors get a clear, deterministic flow:
+
+- npm run validate
+  - Runs markdown lint with an automatic fallback fix and runs Prettier check; if Prettier check fails it will automatically format files.
+
+- npm run prepare:dist
+  - Runs format/lint ensure steps, runs source validations, builds the project, runs the test suite, and re-checks formatting and linting after the build to ensure the dist is clean.
+
+Examples:
+
+```bash
+# quick format & lint check (auto-fixes when possible)
+npm run validate
+
+# full prepare for creating a distribution
+npm run prepare:dist
+```
+
+These scripts aim to reduce confusion by ensuring checks that can be auto-fixed will be fixed automatically, and by running the checks both before and after the build step.
+
 ### 🔗 Multi-Task Coordination with Context Sharing
 
 ```bash
 # Related tasks sharing cached context
 @task-analyzer ABC-1234 "user authentication refactoring"
-@task-analyzer ABC-1235 "API authorization changes" 
+@task-analyzer ABC-1235 "API authorization changes"
 # → Both use same cached context, focus on task-specific analysis
 
 @task-planner "coordinate ABC-1234 and ABC-1235 with shared auth patterns"
@@ -437,26 +459,26 @@ graph TB
 
 ### 🚀 Speed Improvements
 
-| Scenario | Before | After | Improvement |
-|----------|--------|-------|-------------|
-| Task Updates | Full re-run (20-30 min) | Delta update (2-3 min) | **90% faster** |
-| Simple Tasks | Full workflow (15-20 min) | Streamlined (5 min) | **75% faster** |
-| Context Discovery | Every task (5-10 min) | Cached reuse (30 sec) | **95% faster** |
-| Related Tasks | Independent analysis | Shared context | **60% faster** |
+| Scenario          | Before                    | After                  | Improvement    |
+| ----------------- | ------------------------- | ---------------------- | -------------- |
+| Task Updates      | Full re-run (20-30 min)   | Delta update (2-3 min) | **90% faster** |
+| Simple Tasks      | Full workflow (15-20 min) | Streamlined (5 min)    | **75% faster** |
+| Context Discovery | Every task (5-10 min)     | Cached reuse (30 sec)  | **95% faster** |
+| Related Tasks     | Independent analysis      | Shared context         | **60% faster** |
 
 ### 💰 Token Usage Optimization
 
-| Feature | Token Savings | Description |
-|---------|---------------|-------------|
-| Context Caching | 70-80% | Reuse project analysis across tasks |
-| Delta Updates | 60-70% | Update only changed sections |
-| Simple Task Detection | 80-90% | Skip unnecessary deep analysis |
-| Knowledge Reuse | 40-50% | Reference existing patterns |
+| Feature               | Token Savings | Description                         |
+| --------------------- | ------------- | ----------------------------------- |
+| Context Caching       | 70-80%        | Reuse project analysis across tasks |
+| Delta Updates         | 60-70%        | Update only changed sections        |
+| Simple Task Detection | 80-90%        | Skip unnecessary deep analysis      |
+| Knowledge Reuse       | 40-50%        | Reference existing patterns         |
 
 ### 📊 Quality Improvements
 
 - **Context Accuracy**: 90%+ improvement through intelligent caching
-- **Implementation Consistency**: 75% more consistent through pattern reuse  
+- **Implementation Consistency**: 75% more consistent through pattern reuse
 - **Team Productivity**: 50% faster ramp-up with accumulated knowledge
 - **Decision Quality**: 60% better decisions through historical context
 
@@ -576,7 +598,7 @@ grep -r "established pattern" .claude/tasks/active/
 ### Template Improvements
 
 - Enhance existing templates with better structure
-- Add validation checklists  
+- Add validation checklists
 - Improve Claude instruction clarity
 
 ### New Feature Development
@@ -602,7 +624,7 @@ Apache 2 License - See LICENSE file for details
 For questions, issues, or contributions:
 
 - Create GitHub issues for bugs or feature requests
-- Submit pull requests for template improvements  
+- Submit pull requests for template improvements
 - Share workflow examples and best practices
 - Contribute to knowledge base patterns
 
@@ -613,7 +635,7 @@ For questions, issues, or contributions:
 **Before (Version 2.0):**
 
 - Sub-agents with context discovery
-- Framework-aware analysis and planning  
+- Framework-aware analysis and planning
 - Stakeholder communication specialization
 
 **After (Version 2.1):**
@@ -626,14 +648,14 @@ For questions, issues, or contributions:
 
 ### Productivity Metrics
 
-| Metric | Version 2.0 | Version 2.1 | Improvement |
-|--------|-------------|-------------|-------------|
-| Task Update Speed | 20-30 min | 2-3 min | **90% faster** |
-| Simple Task Handling | 15-20 min | 5 min | **75% faster** |
-| Context Discovery | Every task | Cached reuse | **95% faster** |
-| Token Efficiency | Baseline | 60-80% reduction | **Major savings** |
-| Knowledge Retention | Manual | Automated | **Continuous improvement** |
-| Team Onboarding | 2-3 days | 1 day | **50% faster** |
+| Metric               | Version 2.0 | Version 2.1      | Improvement                |
+| -------------------- | ----------- | ---------------- | -------------------------- |
+| Task Update Speed    | 20-30 min   | 2-3 min          | **90% faster**             |
+| Simple Task Handling | 15-20 min   | 5 min            | **75% faster**             |
+| Context Discovery    | Every task  | Cached reuse     | **95% faster**             |
+| Token Efficiency     | Baseline    | 60-80% reduction | **Major savings**          |
+| Knowledge Retention  | Manual      | Automated        | **Continuous improvement** |
+| Team Onboarding      | 2-3 days    | 1 day            | **50% faster**             |
 
 **Version**: 2.1 (Enhanced Intelligence)  
 **Last Updated**: September 2025  

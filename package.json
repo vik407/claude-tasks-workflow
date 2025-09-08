@@ -4,17 +4,23 @@
   "description": "Intelligent, context-aware workflow system for managing software development tasks using Claude AI sub-agents",
   "main": "index.js",
   "scripts": {
-    "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore '.claude/tasks/**'",
-    "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --ignore '.claude/tasks/**' --fix",
-    "format:md": "prettier --write '**/*.md' --ignore-path .gitignore",
-    "format:check": "prettier --check '**/*.md' --ignore-path .gitignore",
-    "validate": "npm run lint:md && npm run format:check",
-    "validate:fix": "npm run lint:md:fix && npm run format:md",
-    "docs:build": "npm run validate:fix",
-    "docs:validate": "npm run validate",
+  "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore '.claude/tasks/**'",
+  "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --ignore '.claude/tasks/**' --fix",
+  "lint:ensure": "npm run lint:md || npm run lint:md:fix",
+  "format:md": "prettier --write '**/*.md' --ignore-path .gitignore",
+  "format:check": "prettier --check '**/*.md' --ignore-path .gitignore",
+  "format:ensure": "npm run format:check || npm run format:md",
+  "validate": "npm run lint:ensure && npm run format:ensure",
+  "validate:fix": "npm run lint:md:fix && npm run format:md",
+  "docs:build": "npm run validate:fix",
+  "docs:validate": "npm run validate",
     "test:structure": "node scripts/validate-structure.js",
     "test:subagents": "node scripts/validate-subagents.js",
-    "test": "npm run docs:validate && npm run test:structure && npm run test:subagents"
+    "test": "npm run docs:validate && npm run test:structure && npm run test:subagents",
+    "build": "node scripts/build.js",
+    "sync:to-src": "node scripts/sync-to-src.js",
+    "test:src": "node scripts/validate-src.js",
+  "prepare:dist": "npm run format:ensure && npm run lint:ensure && npm run test:src && npm run build && npm run test && npm run format:ensure && npm run lint:ensure"
   },
   "keywords": [
     "claude",
@@ -31,7 +37,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "markdownlint": "^0.34.0",
-    "markdownlint-cli": "^0.41.0",
+    "markdownlint-cli": "^0.45.0",
     "prettier": "^3.3.3"
   },
   "engines": {
