@@ -22,7 +22,7 @@ The Claude Tasks Workflow transforms how development teams manage tasks by provi
 
 ```text
 .claude/
-├── subagents/                   # Specialized AI Assistants
+├── agents/                      # Specialized AI Assistants
 │   ├── task-analyzer.md        # Root cause analysis specialist
 │   ├── task-planner.md         # Architecture planning expert
 │   ├── implementation-guide.md # Adaptive implementation specialist
@@ -542,7 +542,7 @@ grep -r "established pattern" .claude/tasks/active/
 /project:task:complexity-review
 
 # Adjust complexity thresholds for your project
-# Edit .claude/subagents/task-analyzer.md complexity rules
+# Edit .claude/agents/task-analyzer.md complexity rules
 ```
 
 ## Migration from Previous Version
@@ -562,7 +562,7 @@ grep -r "established pattern" .claude/tasks/active/
 
    ```bash
    # Download new sub-agents
-   curl -o .claude/subagents/task-updater.md [URL]
+   curl -o .claude/agents/task-updater.md [URL]
    ```
 
 3. **Update existing sub-agents:**

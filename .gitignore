@@ -9,6 +9,7 @@ yarn.lock
 # Task-specific generated content (preserve structure, ignore content)
 .claude/tasks/*/
 !.claude/tasks/README.md
+.claude.backup/
 dev-notes/
 
 # Temporary files

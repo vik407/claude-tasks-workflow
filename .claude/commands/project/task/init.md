@@ -31,7 +31,6 @@ CONTEXT INJECTION CHECKLIST:
 RESTRICTIONS:
 
 - NO code changes allowed during initialization
-- DON'T include WORKFLOW FILES ON .claude/commands, agents, context and knowledge as part of the project.
 - MUST complete analysis phase before planning
 - Document all assumptions and constraints
 - Include project-specific considerations in all documentation

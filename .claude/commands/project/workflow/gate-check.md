@@ -1,3 +1,5 @@
+# Enforce Workflow Gates
+
 Enforce workflow gates for task: $ARGUMENTS
 
 GATE ENFORCEMENT RULES:
