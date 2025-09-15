@@ -51,13 +51,14 @@ Follow this exact sequence for comprehensive analysis:
 Execute these operations simultaneously to optimize analysis efficiency:
 
 - **Code examination** + **Log analysis** for comprehensive evidence collection
-- **System mapping** + **Dependency analysis** for complete impact assessment  
+- **System mapping** + **Dependency analysis** for complete impact assessment
 - **Risk evaluation** + **Business impact assessment** for strategic understanding
 - **Technical investigation** + **Integration point analysis** for architectural considerations
 
 ## Required Output Structure
 
 <command_output>
+
 <summary>Comprehensive technical analysis completed for [TASK-ID] with root cause identification, system impact assessment, and evidence-based recommendations</summary>
 <details>
 <root_cause_identified>Primary technical issue identified with specific evidence from code, logs, or system behavior</root_cause_identified>
@@ -82,7 +83,7 @@ Execute these operations simultaneously to optimize analysis efficiency:
 This command succeeds when:
 
 - ✅ **Root cause confirmed with evidence** - Primary technical issue identified with specific code, configuration, or system evidence
-- ✅ **All affected components identified** - Complete mapping of impacted systems, dependencies, and integration points  
+- ✅ **All affected components identified** - Complete mapping of impacted systems, dependencies, and integration points
 - ✅ **Business impact documented** - Clear articulation of user impact, business process effects, and strategic implications
 - ✅ **Technical investigation complete** - Comprehensive evidence collection with specific file references and system behavior analysis
 - ✅ **Risk assessment finalized** - Proper risk classification with mitigation strategies and priority recommendations
@@ -96,7 +97,7 @@ This command succeeds when:
 - **Configuration examination** - Review relevant configuration files, environment settings, and deployment parameters
 - **Code pattern analysis** - Examine code patterns, architectural decisions, and implementation approaches
 
-### System Impact Assessment  
+### System Impact Assessment
 
 - **Component mapping** - Identify all affected system components with dependency relationships
 - **Integration point analysis** - Map external service dependencies, API integrations, and data flow connections

@@ -62,14 +62,14 @@ Generate comprehensive backlog documentation using this exact XML schema:
     <current_phase>Phase task was in when returned to backlog</current_phase>
     <completion_percentage>Percentage of overall task completed</completion_percentage>
   </backlog_transition>
-  
+
   <transition_rationale>
     <business_justification>Business reason for returning task to backlog</business_justification>
     <priority_context>Current priority landscape and competing initiatives</priority_context>
     <resource_allocation>Team resource considerations affecting priority</resource_allocation>
     <timeline_pressures>Schedule constraints influencing decision</timeline_pressures>
   </transition_rationale>
-  
+
   <work_preservation>
     <analysis_completed>
       <requirements_analysis>Completed requirements and scope analysis</requirements_analysis>
@@ -87,7 +87,7 @@ Generate comprehensive backlog documentation using this exact XML schema:
       <testing_preparation>Test cases and validation approaches prepared</testing_preparation>
     </partial_implementation>
   </work_preservation>
-  
+
   <resumption_readiness>
     <estimated_effort>Effort required to complete task from current state</estimated_effort>
     <skill_requirements>Team skills needed for task completion</skill_requirements>
@@ -95,28 +95,28 @@ Generate comprehensive backlog documentation using this exact XML schema:
     <blocker_analysis>Known blockers and resolution status</blocker_analysis>
     <optimal_conditions>Ideal conditions for task resumption</optimal_conditions>
   </resumption_readiness>
-  
+
   <future_timeline>
     <recommended_prioritization>Suggested priority level for future planning</recommended_prioritization>
     <ideal_resumption_window>Optimal time frame for task resumption</ideal_resumption_window>
     <milestone_alignment>Alignment with project milestones and releases</milestone_alignment>
     <resource_planning>Team allocation recommendations for resumption</resource_planning>
   </future_timeline>
-  
+
   <stakeholder_communication>
     <executive_summary>High-level summary for executive stakeholders</executive_summary>
     <technical_summary>Detailed summary for technical team members</technical_summary>
     <business_impact>Impact assessment of delayed completion</business_impact>
     <alternative_solutions>Alternative approaches or workarounds considered</alternative_solutions>
   </stakeholder_communication>
-  
+
   <documentation_artifacts>
     <backlog_summary_file>Path to generated backlog-summary.md file</backlog_summary_file>
     <preserved_analysis>Location of preserved analysis documentation</preserved_analysis>
     <technical_handoff>Technical handoff documentation location</technical_handoff>
     <resumption_checklist>Future resumption validation checklist</resumption_checklist>
   </documentation_artifacts>
-  
+
   <project_system_updates>
     <jira_updates>Jira ticket status and comment updates</jira_updates>
     <dashboard_updates>Project dashboard status modifications</dashboard_updates>

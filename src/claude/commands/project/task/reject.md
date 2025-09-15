@@ -62,7 +62,7 @@ Generate comprehensive rejection documentation using this exact XML schema:
     <rejection_category>business_priority|technical_risk|resource_constraints|requirements_clarity|dependencies|alternative_solution</rejection_category>
     <phase_at_rejection>Phase when plan was rejected</phase_at_rejection>
   </rejection_metadata>
-  
+
   <rejection_rationale>
     <primary_reason>Main justification for rejecting the implementation plan</primary_reason>
     <business_context>Business factors influencing rejection decision</business_context>
@@ -70,7 +70,7 @@ Generate comprehensive rejection documentation using this exact XML schema:
     <resource_considerations>Resource availability and capacity constraints</resource_considerations>
     <timeline_impact>Effect on project timeline and milestone adherence</timeline_impact>
   </rejection_rationale>
-  
+
   <alternatives_analysis>
     <alternative_approaches>
       <approach feasibility="high|medium|low" risk="high|medium|low">
@@ -83,7 +83,7 @@ Generate comprehensive rejection documentation using this exact XML schema:
     <recommended_path>Suggested next steps or alternative implementation</recommended_path>
     <future_considerations>Factors that might make plan viable in future</future_considerations>
   </alternatives_analysis>
-  
+
   <stakeholder_communications>
     <executive_summary>
       <decision_overview>High-level summary of rejection decision</decision_overview>
@@ -101,7 +101,7 @@ Generate comprehensive rejection documentation using this exact XML schema:
       <future_implementation_guidance>Technical guidance for future attempts</future_implementation_guidance>
     </technical_team_communication>
   </stakeholder_communications>
-  
+
   <knowledge_preservation>
     <analysis_insights>
       <requirements_analysis>Preserved requirements analysis and findings</requirements_analysis>
@@ -119,7 +119,7 @@ Generate comprehensive rejection documentation using this exact XML schema:
       <lessons_learned>Insights valuable for similar future initiatives</lessons_learned>
     </reusable_assets>
   </knowledge_preservation>
-  
+
   <project_system_updates>
     <jira_updates>
       <status_transition>New Jira status (Backlog|Cancelled|Blocked|Needs Clarification)</status_transition>
@@ -132,7 +132,7 @@ Generate comprehensive rejection documentation using this exact XML schema:
       <resource_allocation>Resource allocation updates based on rejection</resource_allocation>
     </dashboard_updates>
   </project_system_updates>
-  
+
   <documentation_deliverables>
     <plan_rejection_doc>Path to detailed plan-rejection.md file</plan_rejection_doc>
     <stakeholder_message_doc>Path to stakeholder-message.md file</stakeholder_message_doc>

@@ -62,14 +62,14 @@ Generate comprehensive cancellation documentation using this exact XML schema:
     <phase_at_cancellation>Task phase when cancelled</phase_at_cancellation>
     <work_completed_percentage>Percentage of analysis and planning completed</work_completed_percentage>
   </cancellation_metadata>
-  
+
   <cancellation_rationale>
     <business_justification>Business reason for task cancellation</business_justification>
     <stakeholder_consensus>Stakeholder agreement and confirmation</stakeholder_consensus>
     <impact_assessment>Impact of cancellation on related projects and dependencies</impact_assessment>
     <alternatives_considered>Alternative approaches or solutions evaluated</alternatives_considered>
   </cancellation_rationale>
-  
+
   <value_extraction>
     <analysis_insights>
       <reusable_patterns>Patterns and approaches applicable to future tasks</reusable_patterns>
@@ -87,7 +87,7 @@ Generate comprehensive cancellation documentation using this exact XML schema:
       <process_patterns>Workflow and process templates</process_patterns>
     </pattern_templates>
   </value_extraction>
-  
+
   <organizational_assets>
     <knowledge_base_entries>
       <entry category="technical|process|architectural" priority="high|medium|low">
@@ -105,14 +105,14 @@ Generate comprehensive cancellation documentation using this exact XML schema:
       </example>
     </example_implementations>
   </organizational_assets>
-  
+
   <stakeholder_communication>
     <executive_summary>High-level cancellation summary for leadership</executive_summary>
     <technical_summary>Detailed technical closure for development teams</technical_summary>
     <value_preserved>Summary of organizational value extracted and preserved</value_preserved>
     <future_applications>How preserved knowledge can benefit future projects</future_applications>
   </stakeholder_communication>
-  
+
   <closure_activities>
     <system_updates>
       <jira_closure>Jira ticket final update with cancellation rationale</jira_closure>
@@ -125,7 +125,7 @@ Generate comprehensive cancellation documentation using this exact XML schema:
       <cleanup_completed>Confirmation of workspace cleanup and organization</cleanup_completed>
     </workspace_archival>
   </closure_activities>
-  
+
   <lessons_learned>
     <process_improvements>Process insights for improving future task management</process_improvements>
     <risk_factors>Risk factors to monitor in future similar initiatives</risk_factors>
