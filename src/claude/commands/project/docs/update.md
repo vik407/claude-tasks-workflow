@@ -219,7 +219,7 @@ Generate comprehensive documentation update using this exact XML schema:
 
 ### Knowledge Repository Structure
 
-```
+```text
 .claude/
 ├── project-context.md          # Current project state and architecture
 ├── decision-log.md             # Architectural and technical decisions

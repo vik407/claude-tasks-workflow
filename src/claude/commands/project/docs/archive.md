@@ -265,7 +265,7 @@ Generate comprehensive archival package using this exact XML schema:
 
 **Structure Requirements:**
 
-```
+```text
 .claude/archive/[YYYY-MM]/[TASK-ID]/
 ├── task-summary.md              # Executive summary and outcomes
 ├── analysis.md                  # Preserved analysis documentation

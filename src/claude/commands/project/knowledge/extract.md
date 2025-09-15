@@ -260,7 +260,7 @@ Generate comprehensive knowledge extraction report using this exact XML schema:
 
 ### Repository Structure
 
-```
+```text
 .claude/knowledge/
 ├── patterns/
 │   ├── code-implementation/

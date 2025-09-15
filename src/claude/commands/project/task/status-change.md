@@ -191,7 +191,7 @@ Generate comprehensive status change documentation using this exact XML schema:
 
 **Expected Input Format:**
 
-```
+```text
 [TASK-ID] status=[TARGET-STATUS] reason=[CHANGE-RATIONALE]
 ```
 
