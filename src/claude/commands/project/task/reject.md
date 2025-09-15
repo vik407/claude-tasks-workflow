@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Preserve valuable analysis and planning work** for future reference and potential resumption
 4. **Update project tracking systems** with appropriate status transitions and detailed context
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All task rejections must provide comprehensive analysis with detailed rationale and professional stakeholder communication standards.
 
 This command is essential for professional project management because:
 
@@ -19,6 +21,8 @@ This command is essential for professional project management because:
 - **Project Continuity**: Appropriate status transitions maintain project tracking and planning accuracy
 
 ## Execution Process
+
+Follow these exact steps for comprehensive plan rejection:
 
 Execute these operations in parallel for comprehensive plan rejection:
 

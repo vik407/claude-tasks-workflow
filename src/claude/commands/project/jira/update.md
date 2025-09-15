@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Preserve complete workflow traceability** linking technical implementation to business requirements and project tracking
 4. **Automate status synchronization** maintaining accuracy between development workflow and project management systems
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All Jira updates must provide intelligent workflow integration with stakeholder-tailored communications and comprehensive traceability preservation.
 
 This command is essential for project transparency because:
 
@@ -19,6 +21,8 @@ This command is essential for project transparency because:
 - **Audit Trail**: Maintains comprehensive record of development decisions and progress for future reference
 
 ## Execution Process
+
+Follow these exact steps for comprehensive Jira integration:
 
 Execute these operations concurrently for comprehensive Jira integration:
 

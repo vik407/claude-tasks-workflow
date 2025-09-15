@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Maintain quality standards** while optimizing for speed and efficiency
 4. **Generate streamlined documentation** focused on essential implementation details
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All simple task executions must maintain project quality standards while optimizing for speed and efficiency through template-based solutions.
 
 This command is optimized for efficiency because:
 
@@ -19,6 +21,8 @@ This command is optimized for efficiency because:
 - **Quality Balance**: Maintains essential validation while eliminating unnecessary complexity
 
 ## Execution Process
+
+Follow these exact steps for simple task completion:
 
 Execute this streamlined sequence for simple task completion:
 

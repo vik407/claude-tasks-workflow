@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Build institutional memory** preserving team learnings, risk mitigations, and process improvements for organizational benefit
 4. **Establish searchable knowledge repository** enabling efficient discovery and application of accumulated project wisdom
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All knowledge extraction must perform systematic mining with organized asset creation and searchable repository establishment for organizational learning acceleration.
 
 This command is vital for organizational learning because:
 
@@ -20,7 +22,9 @@ This command is vital for organizational learning because:
 
 ## Execution Process
 
-Execute these operations concurrently for comprehensive knowledge extraction:
+Follow these exact steps for comprehensive knowledge extraction:
+
+Execute these operations simultaneously for optimal processing:
 
 ### Completed Work Analysis and Mining
 

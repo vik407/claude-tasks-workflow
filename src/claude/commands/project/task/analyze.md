@@ -8,7 +8,9 @@ This command accomplishes the following specific objectives:
 2. **Assess complete system impact** by mapping all affected components, dependencies, and integration points
 3. **Generate evidence-based technical analysis** with specific code references, system behaviors, and actionable recommendations
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All analysis outputs must be evidence-based with comprehensive system impact assessment and actionable recommendations.
 
 This command is important because:
 
@@ -18,7 +20,7 @@ This command is important because:
 
 ## Execution Process
 
-Follow this exact sequence for comprehensive analysis:
+Follow these exact steps for comprehensive analysis:
 
 <execution_steps>
 <step number="1">
