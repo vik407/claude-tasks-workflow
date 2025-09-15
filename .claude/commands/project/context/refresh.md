@@ -10,7 +10,7 @@ SELECTIVE REFRESH PROCESS:
 REFRESH TRIGGERS:
 
 - **Dependencies**: package.json, requirements.txt, Gemfile changes
-- **Architecture**: New services, database changes, API modifications  
+- **Architecture**: New services, database changes, API modifications
 - **Process**: Team conventions, testing approaches, CI/CD updates
 - **Tools**: New development tools, build system changes
 

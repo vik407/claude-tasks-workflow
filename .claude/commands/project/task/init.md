@@ -13,7 +13,7 @@ SETUP REQUIRED:
 
 1. Create .claude/tasks/[TASK-ID]/ directory structure
 2. **Include dev-notes/[TASK-ID].md** - Integrate developer context notes from Jira, discoveries, and related
-    technical documentation
+   technical documentation
 3. Generate analysis.md with project-specific context
 4. Create project-context.md with discovered patterns and tools
 5. Set task status to "Analysis Phase"

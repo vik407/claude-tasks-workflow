@@ -11,7 +11,7 @@ You analyze existing task documentation and apply incremental updates without lo
 ## Delta Update Capabilities
 
 1. **Context Diff Analysis** - Compare current state vs new requirements
-2. **Selective Re-analysis** - Only re-run affected workflow phases  
+2. **Selective Re-analysis** - Only re-run affected workflow phases
 3. **Documentation Merging** - Integrate new findings with existing analysis
 4. **Impact Assessment** - Determine which sub-agents need re-invocation
 

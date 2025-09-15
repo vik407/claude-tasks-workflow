@@ -6,16 +6,16 @@ const path = require('path');
 console.log('🔍 Validating Claude Tasks Workflow structure...\n');
 
 const requiredFiles = [
-  '.claude/subagents/task-analyzer.md',
-  '.claude/subagents/task-planner.md', 
-  '.claude/subagents/implementation-guide.md',
-  '.claude/subagents/meeting-facilitator.md',
+  '.claude/agents/task-analyzer.md',
+  '.claude/agents/task-planner.md', 
+  '.claude/agents/implementation-guide.md',
+  '.claude/agents/meeting-facilitator.md',
   '.claude/context/project-analyzer.md',
   '.claude/MIGRATION_SUMMARY.md'
 ];
 
 const requiredDirectories = [
-  '.claude/subagents',
+  '.claude/agents',
   '.claude/commands/project',
   '.claude/context',
   '.claude/tasks'
@@ -51,9 +51,9 @@ console.log();
 
 // Check sub-agents have proper YAML frontmatter
 console.log('🤖 Validating sub-agent format...');
-const subagentFiles = fs.readdirSync('.claude/subagents')
+const subagentFiles = fs.readdirSync('.claude/agents')
   .filter(file => file.endsWith('.md'))
-  .map(file => path.join('.claude/subagents', file));
+  .map(file => path.join('.claude/agents', file));
 
 subagentFiles.forEach(file => {
   try {

@@ -23,7 +23,7 @@ Before full analysis, classify task complexity:
 **SIMPLE** (< 2 hours):
 
 - Single file CSS/styling changes
-- Text content updates  
+- Text content updates
 - Configuration value changes
 - Simple UI element modifications
 - Translation/localization updates
