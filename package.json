@@ -1,6 +1,6 @@
 {
   "name": "claude-tasks-workflow",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Intelligent, context-aware workflow system for managing software development tasks using Claude AI sub-agents",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,13 @@
     "format": "prettier --check 'src/claude/**/*.md' --ignore-path .gitignore",
     "format:fix": "prettier --write 'src/claude/**/*.md' --ignore-path .gitignore",
     "validate": "node scripts/validate.js",
+    "validate:claude4": "node scripts/validate-claude4-compliance.js",
+    "validate:enhanced": "npm run validate && npm run validate:claude4",
     "build": "npm run lint && npm run format && node scripts/build.js",
+    "build:claude4": "npm run lint && npm run format && npm run validate:claude4 && node scripts/build.js",
     "dist": "node scripts/dist.js",
-    "test": "npm run validate",
-    "prepare:dist": "npm run build && npm run validate && npm run dist",
+    "test": "npm run validate:enhanced",
+    "prepare:dist": "npm run build:claude4 && npm run validate:enhanced && npm run dist",
     "deploy": "node scripts/deploy.js"
   },
   "keywords": [

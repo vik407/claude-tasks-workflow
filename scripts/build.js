@@ -3,6 +3,9 @@
 const fs = require('fs');
 const path = require('path');
 
+// Import Claude 4 compliance validation
+const { validateClaude4Compliance } = require('./validate-claude4-compliance');
+
 console.log('🔨 Building Claude Tasks Workflow distribution...\n');
 
 const sourceDir = 'src/claude';
@@ -70,7 +73,7 @@ function copyRecursive(src, dest, options = {}) {
 }
 
 /**
- * Validate markdown file structure
+ * Validate markdown file structure and Claude 4 compliance
  * @param {string} filePath - Path to markdown file
  */
 function validateMarkdownFile(filePath) {
@@ -86,6 +89,21 @@ function validateMarkdownFile(filePath) {
     
     if (!hasYamlFrontmatter || !hasName || !hasDescription || !hasTools) {
       throw new Error(`Invalid sub-agent format in ${filename}: missing required YAML frontmatter fields`);
+    }
+    
+    // Claude 4 compliance validation for sub-agents
+    try {
+      const complianceResult = validateClaude4Compliance(filePath, true);
+      if (!complianceResult.compliant) {
+        console.log(`   ⚠️  Claude 4 compliance issues in ${filename}: ${complianceResult.totalScore}%`);
+        if (complianceResult.criticalIssues.length > 0) {
+          console.log(`       Critical issues: ${complianceResult.criticalIssues.join(', ')}`);
+        }
+      } else {
+        console.log(`   ✅ Claude 4 compliant: ${filename} (${complianceResult.totalScore}%)`);
+      }
+    } catch (error) {
+      console.log(`   ⚠️  Claude 4 validation error in ${filename}: ${error.message}`);
     }
   }
   
