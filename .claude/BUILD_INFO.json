@@ -1,7 +1,7 @@
 {
-  "buildTime": "2025-09-08T23:58:04.754Z",
+  "buildTime": "2025-09-15T02:39:08.493Z",
   "buildVersion": "2.0.0",
-  "nodeVersion": "v22.14.0",
+  "nodeVersion": "v22.17.0",
   "source": "src/claude",
   "target": "build/.claude",
   "buildTool": "scripts/build.js",

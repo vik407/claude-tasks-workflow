@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Provide comprehensive presentation toolkit** including talking points, screen sharing guides, and Q&A preparation for effective technical communication
 4. **Enable confident technical presentation** with complete context, rationale, and visual aids for any audience technical literacy level
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All standup briefings must provide presentation-ready technical summaries with audience-tailored communication and comprehensive presentation toolkit.
 
 This command is essential for team communication because:
 
@@ -19,6 +21,8 @@ This command is essential for team communication because:
 - **Knowledge Transfer**: Comprehensive briefings ensure technical knowledge is shared across team members and stakeholders
 
 ## Execution Process
+
+Follow these exact steps for comprehensive briefing preparation:
 
 Execute these operations concurrently for comprehensive briefing preparation:
 

@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Provide comprehensive technical narrative** connecting code changes to business impact and architectural decisions
 4. **Enable confident code presentation** with detailed scripts, timing guidance, and Q&A preparation
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All code walkthroughs must provide structured presentation guides with interactive demonstration sequences and comprehensive technical narratives.
 
 This command is essential for technical communication because:
 
@@ -19,6 +21,8 @@ This command is essential for technical communication because:
 - **Team Learning**: Interactive code presentations accelerate team skill development and best practice sharing
 
 ## Execution Process
+
+Follow these exact steps for comprehensive code walkthrough preparation:
 
 Execute these operations concurrently for comprehensive code walkthrough preparation:
 

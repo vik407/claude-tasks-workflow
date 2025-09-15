@@ -46,3 +46,4 @@ out/
 
 # Coverage directory used by tools like nyc
 coverage/
+.claude/commands/project/docs/meeting-prep.md
