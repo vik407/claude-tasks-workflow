@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Execute intelligent stakeholder identification** determining notification recipients based on project roles, impact analysis, and communication preferences
 4. **Ensure clear action planning** with specific next steps, expectations, and contact information for follow-up coordination
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All stakeholder notifications must provide audience-tailored communications with comprehensive status context and intelligent stakeholder identification for clear action planning.
 
 This command is critical for stakeholder alignment because:
 
@@ -19,6 +21,8 @@ This command is critical for stakeholder alignment because:
 - **Risk Mitigation**: Early notification of changes prevents downstream issues and enables proactive response planning
 
 ## Execution Process
+
+Follow these exact steps for comprehensive stakeholder notification:
 
 Execute these operations in parallel for comprehensive stakeholder notification:
 

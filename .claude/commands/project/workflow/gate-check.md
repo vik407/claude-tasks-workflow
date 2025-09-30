@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Enforce architectural consistency** confirming implementation alignment with approved analysis and planning documentation
 4. **Provide actionable remediation guidance** with specific steps for achieving compliance and removing progression blockers
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All gate enforcement must ensure comprehensive workflow compliance with systematic phase validation and actionable remediation guidance.
 
 This command is essential for workflow integrity because:
 
@@ -19,6 +21,8 @@ This command is essential for workflow integrity because:
 - **Process Improvement**: Gate violations provide valuable feedback for workflow optimization and team development
 
 ## Execution Process
+
+Follow these exact steps for comprehensive gate validation:
 
 Execute these operations in parallel for comprehensive gate validation:
 

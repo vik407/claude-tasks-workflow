@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Identify and prioritize blockers** with actionable resolution strategies
 4. **Provide stakeholder-ready reporting** tailored to audience needs and technical context
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All status reports must provide accurate real-time assessment with stakeholder-ready reporting and actionable resolution strategies.
 
 This command is critical because:
 
@@ -19,6 +21,8 @@ This command is critical because:
 - **Risk Mitigation**: Early identification of blockers and compliance issues prevents project delays
 
 ## Execution Process
+
+Follow these exact steps for comprehensive status assessment:
 
 Execute these operations concurrently for comprehensive status assessment:
 

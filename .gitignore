@@ -9,6 +9,8 @@ yarn.lock
 # Task-specific generated content (preserve structure, ignore content)
 .claude/tasks/*/
 !.claude/tasks/README.md
+.claude/tasks/**/.validation-cache/
+.claude/tasks/**/.debug/
 .claude.backup/
 dev-notes/
 

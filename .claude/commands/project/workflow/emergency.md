@@ -9,14 +9,16 @@ This command accomplishes the following specific objectives:
 3. **Create comprehensive technical debt tracking** documenting emergency decisions and planning proper workflow completion
 4. **Establish post-emergency recovery process** ensuring lessons learned and long-term solution development
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All emergency overrides must validate genuine critical conditions with minimal viable intervention and comprehensive technical debt tracking for proper recovery processes.
 
 This command is reserved for genuine emergencies because:
 
 - **Business Continuity**: Critical incidents require immediate intervention to prevent business impact and system failures
-- **Risk Management**: Emergency situations demand rapid response while maintaining system integrity and change control
-- **Technical Debt Control**: Emergency interventions create technical debt that must be properly managed and resolved
-- **Learning Opportunity**: Emergency responses provide valuable insights for system improvement and incident prevention
+- **Risk Management**: Emergency situations demand rapid response while ensuring system integrity and change control
+- **Technical Debt Control**: Emergency interventions create technical debt that requires proper management and resolution
+- **Learning Opportunity**: Emergency responses provide valuable insights for system improvement and incident reduction
 
 ## Emergency Qualification Criteria
 
@@ -38,7 +40,9 @@ This command is reserved for genuine emergencies because:
 
 ## Execution Process
 
-Execute these operations sequentially for emergency response:
+Follow these exact steps for emergency response:
+
+Execute these operations simultaneously for optimal processing:
 
 ### Emergency Validation and Justification
 
@@ -58,7 +62,7 @@ Execute these operations sequentially for emergency response:
 
 1. **Implement surgical fix** with minimal system changes and maximum safety precautions
 2. **Validate fix effectiveness** confirming emergency condition resolution
-3. **Monitor system stability** ensuring intervention doesn't create additional issues
+3. **Monitor system stability** ensuring intervention maintains system integrity
 4. **Document all changes** with detailed rationale and emergency context
 
 ### Technical Debt and Recovery Planning
@@ -233,7 +237,7 @@ Generate comprehensive emergency response documentation using this exact XML sch
 
 ### Usage Limitations
 
-- **Single Use Per Issue**: Cannot use emergency override twice for the same underlying problem
+- **Single Use Per Issue**: Emergency override limited to one use per underlying problem
 - **24-Hour Expiration**: Emergency status automatically expires after 24 hours
 - **48-Hour Completion**: Must complete proper workflow analysis within 48 hours
 - **Stakeholder Approval**: Requires explicit stakeholder approval for emergency status
@@ -243,7 +247,7 @@ Generate comprehensive emergency response documentation using this exact XML sch
 - **Complete Documentation**: All emergency changes must be fully documented
 - **Audit Trail**: Maintain complete audit trail of emergency decisions and actions
 - **Post-Emergency Review**: Mandatory post-emergency review within 1 week
-- **Process Improvement**: Identify and implement process improvements to prevent recurrence
+- **Process Improvement**: Identify and implement process improvements to reduce recurrence
 
 ## Success Criteria
 

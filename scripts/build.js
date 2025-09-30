@@ -239,7 +239,33 @@ async function build() {
     console.log('📦 Copying source files to build directory...');
     const { files, dirs } = copyRecursive(sourceDir, buildDir, { optimize: true });
     console.log(`   ✅ Copied ${files} files and ${dirs} directories\\n`);
-    
+
+    // Step 2.5: Copy validation hooks and make executable
+    const hooksDir = path.join(sourceDir, 'hooks');
+    const buildHooksDir = path.join(buildDir, 'hooks');
+
+    if (fs.existsSync(hooksDir)) {
+      console.log('📦 Copying validation hooks...');
+      copyRecursive(hooksDir, buildHooksDir);
+
+      // Make hooks executable
+      const hookFiles = fs.readdirSync(buildHooksDir);
+      let executableCount = 0;
+
+      hookFiles.forEach(file => {
+        if (file.endsWith('.py')) {
+          const hookPath = path.join(buildHooksDir, file);
+          fs.chmodSync(hookPath, 0o755);
+          executableCount++;
+          console.log(`   ✅ Made executable: ${file}`);
+        }
+      });
+
+      console.log(`   ✅ Copied ${hookFiles.length} hooks (${executableCount} executable)\\n`);
+    } else {
+      console.log('⚠️  No hooks directory found (expected at src/claude/hooks/)\\n');
+    }
+
     // Step 3: Validate build structure
     const buildValid = validateBuild();
     if (!buildValid) {

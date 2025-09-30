@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Preserve valuable completed work** ensuring no loss of analysis, research, or planning investments
 4. **Update project tracking systems** with detailed context and appropriate workflow transitions
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All status changes must execute validated transitions with comprehensive stakeholder communication and complete knowledge preservation.
 
 This command is critical for project agility because:
 
@@ -19,6 +21,8 @@ This command is critical for project agility because:
 - **Team Coordination**: Ensures coordinated understanding of task status across all project participants
 
 ## Execution Process
+
+Follow these exact steps for comprehensive status change management:
 
 Execute these operations concurrently for comprehensive status change management:
 

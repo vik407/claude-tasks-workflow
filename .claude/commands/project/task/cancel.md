@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Create reusable knowledge assets** for future project acceleration and pattern recognition
 4. **Ensure professional closure** with comprehensive stakeholder communication and system updates
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All task cancellations must ensure maximum organizational value extraction with comprehensive knowledge preservation and professional closure processes.
 
 This command is vital for organizational learning because:
 
@@ -19,6 +21,8 @@ This command is vital for organizational learning because:
 - **Resource Optimization**: Ensures investment in analysis and research benefits future projects
 
 ## Execution Process
+
+Follow these exact steps for comprehensive task cancellation:
 
 Execute these operations concurrently for comprehensive task cancellation:
 
