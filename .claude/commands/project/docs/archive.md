@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Execute professional task closure** with comprehensive archival, stakeholder communication, and workspace organization
 4. **Enable future development acceleration** through searchable knowledge preservation and pattern accessibility
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All task archival must ensure comprehensive knowledge preservation with organizational learning integration and future development acceleration capabilities.
 
 This command is vital for organizational learning because:
 
@@ -19,6 +21,8 @@ This command is vital for organizational learning because:
 - **Team Efficiency**: Organized knowledge assets enable faster onboarding and more effective collaboration
 
 ## Execution Process
+
+Follow these exact steps for comprehensive task archival:
 
 Execute these operations concurrently for comprehensive task archival:
 

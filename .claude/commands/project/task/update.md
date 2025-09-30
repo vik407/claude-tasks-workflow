@@ -6,10 +6,12 @@ This command accomplishes the following specific objectives:
 
 1. **Seamlessly integrate new requirements** while preserving all existing task context and progress
 2. **Perform comprehensive impact assessment** across technical, timeline, and resource dimensions
-3. **Apply smart delta updates** to affected documentation sections without losing valuable insights
+3. **Apply smart delta updates** to affected documentation sections while preserving valuable insights
 4. **Maintain workflow compliance** ensuring updates align with project standards and quality gates
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All task updates must maintain comprehensive integration of new requirements while preserving existing context and ensuring workflow compliance.
 
 This command is essential because:
 
@@ -20,7 +22,9 @@ This command is essential because:
 
 ## Execution Process
 
-Execute these operations sequentially for precise task updating:
+Follow these exact steps for precise task updating:
+
+Execute these operations simultaneously for optimal processing:
 
 ### Context Analysis and Preservation
 
@@ -127,7 +131,7 @@ Generate comprehensive update report using this exact XML schema:
 
 ## Success Criteria
 
-- Complete integration of new information with zero loss of existing valuable work
+- Complete integration of new information while maintaining all existing valuable work
 - Accurate delta analysis with precise impact assessment
 - Updated documentation maintaining project workflow compliance
 - Clear change tracking for audit and future reference

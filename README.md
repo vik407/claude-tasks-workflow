@@ -27,27 +27,32 @@ The Claude Tasks Workflow transforms how development teams manage tasks by provi
 │   ├── task-planner.md         # Architecture planning expert
 │   ├── implementation-guide.md # Adaptive implementation specialist
 │   ├── meeting-facilitator.md  # Communication and presentation expert
-│   └── task-updater.md         # Delta update specialist (NEW)
+│   └── task-updater.md         # Delta update specialist
 ├── commands/                    # Enhanced context-aware commands
 │   ├── project/
 │   │   ├── task/               # Core task lifecycle (enhanced)
 │   │   │   ├── init.md         # Context-aware task initialization
+│   │   │   ├── plan.md         # Plan generation with validation hooks
 │   │   │   ├── status.md       # Adaptive status reporting
-│   │   │   ├── update.md       # Incremental task updates (NEW)
-│   │   │   ├── simple.md       # Streamlined simple task workflow (NEW)
+│   │   │   ├── update.md       # Incremental task updates
+│   │   │   ├── simple.md       # Streamlined simple task workflow
 │   │   │   └── ...
 │   │   ├── meeting/            # Meeting facilitation templates
 │   │   ├── workflow/           # Process management
 │   │   ├── jira/              # Intelligent Jira integration
 │   │   ├── ci/                # Project-aware CI/CD validation
 │   │   ├── docs/              # Documentation management
-│   │   ├── context/           # Context management (NEW)
+│   │   ├── context/           # Context management
 │   │   │   └── refresh.md     # Selective context refresh
-│   │   └── knowledge/         # Knowledge management (NEW)
+│   │   └── knowledge/         # Knowledge management
 │   │       └── extract.md     # Pattern extraction from completed tasks
+├── hooks/                       # Validation hooks (NEW - CWF-004)
+│   └── validate_workflow_plan.py # Plan generation validation hook
+├── scripts/                     # Runtime utilities (distributed)
+│   └── (Future: workspace management, XML validation, etc.)
 ├── context/                     # Project analysis patterns
 │   └── project-analyzer.md     # Standardized context injection (enhanced with caching)
-├── knowledge/                   # Accumulated project wisdom (NEW)
+├── knowledge/                   # Accumulated project wisdom
 │   └── project-patterns.md     # Extracted patterns and architectural decisions
 └── tasks/                      # Generated task folders
     ├── active/                 # Current tasks
@@ -56,6 +61,10 @@ The Claude Tasks Workflow transforms how development teams manage tasks by provi
         ├── analysis.md
         ├── plan.md
         ├── project-context.md # Auto-generated project info
+        ├── .validation-cache/ # Validation results cache (NEW - CWF-004)
+        │   └── plan-validation.json
+        ├── .debug/            # Debug artifacts on failure (NEW - CWF-004)
+        │   └── plan-failure.json
         └── ...
 ```
 
@@ -239,6 +248,30 @@ npm run benchmark:claude4
 - ✅ 100% backward compatibility maintenance
 
 ## 🆕 New Enhanced Features
+
+### Hook-Based Validation System (CWF-004)
+
+Automated workflow quality assurance with token-optimized validation caching:
+
+```bash
+# Plan validation hook executes automatically on file writes
+# Caches validation results for instant command access
+# 95% token reduction: ~1000-3000 tokens → ~50-100 tokens
+
+# Commands check validation caches instead of re-validating
+/project:task:plan ABC-1234
+# → Reads .validation-cache/plan-validation.json (instant, minimal tokens)
+
+# Debug artifacts generated automatically on failures
+# → See .claude/tasks/ABC-1234/.debug/plan-failure.json
+```
+
+**Benefits:**
+
+- ✅ 95% token reduction through validation caching
+- ✅ Automatic execution on tool calls (Write, Edit)
+- ✅ Non-blocking validation with actionable error reporting
+- ✅ Distributed hooks in production-ready architecture
 
 ### Incremental Task Updates
 

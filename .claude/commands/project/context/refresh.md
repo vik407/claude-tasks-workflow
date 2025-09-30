@@ -5,11 +5,13 @@ Execute intelligent project context refresh with selective updates and knowledge
 This command accomplishes the following specific objectives:
 
 1. **Perform selective context analysis** identifying specific project changes requiring documentation updates while preserving stable architectural and process knowledge
-2. **Execute targeted context refresh** updating only stale or changed sections without losing accumulated project wisdom and team patterns
+2. **Execute targeted context refresh** updating only stale or changed sections while preserving accumulated project wisdom and team patterns
 3. **Propagate context updates** to active tasks ensuring all workflow participants have current project understanding
 4. **Validate context accuracy** confirming updated context reflects actual project state and team practices
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All context refresh operations must ensure selective updates with knowledge preservation while maintaining accuracy and current project understanding.
 
 This command is essential for maintaining project intelligence because:
 
@@ -20,7 +22,9 @@ This command is essential for maintaining project intelligence because:
 
 ## Execution Process
 
-Execute these operations concurrently for intelligent context refresh:
+Follow these exact steps for intelligent context refresh:
+
+Execute these operations simultaneously for optimal processing:
 
 ### Change Detection and Analysis
 

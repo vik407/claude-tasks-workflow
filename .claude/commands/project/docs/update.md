@@ -9,7 +9,9 @@ This command accomplishes the following specific objectives:
 3. **Maintain documentation consistency** across all project knowledge systems with accurate technical specifications and decision rationale
 4. **Enable future development acceleration** through comprehensive knowledge preservation and searchable documentation organization
 
-## Context and Motivation
+## Purpose and Context
+
+Quality requirement: All documentation updates must maintain consistency across knowledge systems with comprehensive organizational learning integration.
 
 This command is essential for organizational knowledge management because:
 
@@ -19,6 +21,8 @@ This command is essential for organizational knowledge management because:
 - **Quality Maintenance**: Consistent documentation standards ensure maintainable knowledge systems and architectural coherence
 
 ## Execution Process
+
+Follow these exact steps for comprehensive documentation update:
 
 Execute these operations concurrently for comprehensive documentation update:
 
