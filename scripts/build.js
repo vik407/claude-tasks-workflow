@@ -240,7 +240,15 @@ async function build() {
     const { files, dirs } = copyRecursive(sourceDir, buildDir, { optimize: true });
     console.log(`   ✅ Copied ${files} files and ${dirs} directories\\n`);
 
-    // Step 2.5: Copy validation hooks and make executable
+    // Step 2.5: Copy README.md to build directory
+    const readmePath = path.join(process.cwd(), 'README.md');
+    if (fs.existsSync(readmePath)) {
+      console.log('📄 Copying README.md to build directory...');
+      fs.copyFileSync(readmePath, path.join(buildDir, 'README.md'));
+      console.log('   ✅ README.md copied\\n');
+    }
+
+    // Step 2.6: Copy validation hooks and make executable
     const hooksDir = path.join(sourceDir, 'hooks');
     const buildHooksDir = path.join(buildDir, 'hooks');
 

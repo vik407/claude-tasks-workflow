@@ -11,6 +11,7 @@ yarn.lock
 !.claude/tasks/README.md
 .claude/tasks/**/.validation-cache/
 .claude/tasks/**/.debug/
+.claude/knowledge/
 .claude.backup/
 dev-notes/
 
