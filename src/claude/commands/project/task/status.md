@@ -47,71 +47,44 @@ Execute these operations concurrently for comprehensive status assessment:
 3. **Calculate timeline adjustments** based on discovered complexity and blockers
 4. **Invoke meeting-facilitator sub-agent** for stakeholder communication coordination
 
-## Expected Outputs
+## Expected Output
 
-Generate structured status report using this exact XML schema:
+Generate structured status report in markdown format:
 
-```xml
-<command_output>
-  <task_status>
-    <current_phase>Analysis|Planning|Implementation|Validation</current_phase>
-    <completion_percentage>0-100</completion_percentage>
-    <phase_compliance>compliant|needs_attention|critical_issues</phase_compliance>
-  </task_status>
+**Task Status**
 
-  <blockers>
-    <technical_blockers>
-      <blocker priority="high|medium|low" category="code|infrastructure|dependencies">
-        <description>Specific issue description</description>
-        <impact>Business/technical impact assessment</impact>
-        <resolution_strategy>Actionable resolution steps</resolution_strategy>
-      </blocker>
-    </technical_blockers>
-    <process_blockers>
-      <blocker priority="high|medium|low" category="workflow|communication|resources">
-        <description>Process issue description</description>
-        <resolution_strategy>Process improvement steps</resolution_strategy>
-      </blocker>
-    </process_blockers>
-  </blockers>
+- Current phase: Analysis|Planning|Implementation|Validation
+- Completion percentage: 0-100%
+- Phase compliance: compliant|needs_attention|critical_issues
 
-  <project_integration>
-    <codebase_alignment>excellent|good|needs_improvement|critical</codebase_alignment>
-    <quality_tools_status>passing|warnings|failing</quality_tools_status>
-    <documentation_compliance>complete|partial|insufficient</documentation_compliance>
-  </project_integration>
+**Blockers**
 
-  <stakeholder_reports>
-    <technical_team>
-      <code_quality_metrics>Detailed technical metrics</code_quality_metrics>
-      <test_coverage>Coverage percentage and gaps</test_coverage>
-      <performance_impact>Performance analysis</performance_impact>
-    </technical_team>
-    <product_team>
-      <feature_progress>User-facing progress summary</feature_progress>
-      <business_value>Value delivery assessment</business_value>
-      <user_impact>Impact on user experience</user_impact>
-    </product_team>
-    <management_team>
-      <resource_utilization>Team capacity and allocation</resource_utilization>
-      <timeline_status>Schedule adherence and projections</timeline_status>
-      <risk_factors>Identified risks and mitigation</risk_factors>
-    </management_team>
-  </stakeholder_reports>
+- Technical blockers with priority, impact, and resolution strategy
+- Process blockers with description and improvement steps
 
-  <next_steps>
-    <immediate_actions>High-priority actions for next 24-48 hours</immediate_actions>
-    <timeline_adjustments>Recommended schedule modifications</timeline_adjustments>
-    <resource_needs>Additional resources or support required</resource_needs>
-  </next_steps>
+**Project Integration**
 
-  <remediation_guidance>
-    <compliance_issues>Workflow violations and correction steps</compliance_issues>
-    <process_improvements>Recommended process enhancements</process_improvements>
-    <sub_agent_recommendations>Suggested sub-agent invocations</sub_agent_recommendations>
-  </remediation_guidance>
-</command_output>
-```
+- Codebase alignment assessment
+- Quality tools status
+- Documentation compliance
+
+**Stakeholder Reports**
+
+- Technical team: code quality, test coverage, performance
+- Product team: feature progress, business value, user impact
+- Management team: resources, timeline, risk factors
+
+**Next Steps**
+
+- Immediate actions for next 24-48 hours
+- Timeline adjustments
+- Resource needs
+
+**Remediation Guidance**
+
+- Compliance issues and corrections
+- Process improvements
+- Sub-agent recommendations
 
 ## Success Criteria
 

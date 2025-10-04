@@ -141,28 +141,31 @@ Execute these operations simultaneously to optimize implementation efficiency:
 - **Documentation updates** + **Progress tracking** for complete implementation oversight
 - **Integration testing** + **Rollback validation** for comprehensive risk management
 
-## Required Output Structure
+## Expected Output
 
-<command_output>
+Generate implementation report in markdown format:
 
-<summary>Implementation completed for [TASK-ID] using [AUTO|GUIDED] mode with comprehensive quality validation and production readiness confirmation</summary>
-<details>
-<implementation_approach>[AUTO|GUIDED] mode selected with rationale and execution approach</implementation_approach>
-<changes_implemented>Complete list of code changes, file modifications, and system updates with validation status</changes_implemented>
-<quality_validation>Test results, performance metrics, security validation, and code quality assessment</quality_validation>
-<documentation_updates>All documentation updated according to project standards with implementation details</documentation_updates>
-</details>
-<next_steps>
-<step>Review implementation results for quality and completeness</step>
-<step>Validate that all success criteria have been met</step>
-<step>Deploy to appropriate environment following project deployment procedures</step>
-</next_steps>
-<quality_validation>
-<implementation_completeness>All planned changes implemented according to approved plan.md</implementation_completeness>
-<quality_standards_met>Code quality, testing, performance, and security standards satisfied</quality_standards_met>
-<production_readiness>Implementation ready for deployment with comprehensive validation completed</production_readiness>
-</quality_validation>
-</command_output>
+**Summary**
+Implementation completed for [TASK-ID] using [AUTO|GUIDED] mode with comprehensive quality validation and production readiness confirmation
+
+**Implementation Details**
+
+- Implementation approach: [AUTO|GUIDED] mode selected with rationale and execution approach
+- Changes implemented: Complete list of code changes, file modifications, and system updates
+- Quality validation: Test results, performance metrics, security validation, code quality assessment
+- Documentation updates: All documentation updated according to project standards
+
+**Next Steps**
+
+1. Review implementation results for quality and completeness
+2. Validate that all success criteria have been met
+3. Deploy to appropriate environment following project deployment procedures
+
+**Quality Validation**
+
+- Implementation completeness: All planned changes implemented according to approved plan.md
+- Quality standards met: Code quality, testing, performance, and security standards satisfied
+- Production readiness: Implementation ready for deployment with comprehensive validation
 
 ## Success Criteria
 

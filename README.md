@@ -1,878 +1,422 @@
 # Claude Tasks Workflow
 
-An intelligent, context-aware workflow system for managing software development tasks using Claude AI sub-agents.
-This repository provides specialized AI assistants and enhanced commands that automatically adapt to your project's
-technology stack, team processes, and architectural patterns.
+Transform Claude from a helpful assistant into a structured development workflow system.
 
-## Overview
+## Why Use This Workflow?
 
-The Claude Tasks Workflow transforms how development teams manage tasks by providing:
+### Without This Workflow
 
-- **Claude 4 Optimized Sub-Agents**: 100% explicit instructions with systematic thinking and XML structured outputs
-- **Dynamic Context Injection**: Automatic project analysis and technology stack detection with intelligent caching
-- **Adaptive Workflows**: Claude 4 enhanced behavior with AUTO/GUIDED modes and complexity-aware optimization  
-- **Parallel Processing Commands**: Concurrent operation execution with 50%+ performance improvements
-- **Structured Documentation**: XML schemas enable reliable parsing and automated integration
-- **Transparent Reasoning**: `<thinking>` blocks provide clear decision rationale for complex analysis
-- **Quality-First Operations**: Embedded validation gates and success criteria throughout all workflows
-- **Incremental Intelligence**: Delta updates with enhanced context preservation and pattern recognition
-- **Performance Intelligence**: Claude 4 optimization delivers 30% quality improvement and systematic reliability
+When using Claude directly for development tasks:
+
+- No memory of your project's tech stack or patterns
+- Start from scratch explaining context every time
+- Inconsistent analysis depth and quality
+- Manual tracking of task evolution and decisions
+- Difficulty maintaining continuity across sessions
+
+### With This Workflow
+
+- **Persistent Project Context**: Your tech stack, patterns, and conventions cached and reused
+- **Structured Task Lifecycle**: Clear phases from analysis through implementation
+- **5 Specialized AI Agents**: Each optimized for specific workflow stages
+- **Automatic Complexity Detection**: Simple tasks get streamlined, complex tasks get thorough planning
+- **Delta Updates**: Change requirements without losing existing work
+- **Knowledge Accumulation**: Build a repository of decisions and patterns over time
+
+**Bottom line**: Get consistent, high-quality development assistance that learns your project and gets better over time.
+
+## What This Workflow Provides
+
+### For Developers
+
+**Before**: "Claude, analyze this authentication bug"
+
+- Gets generic debugging suggestions
+- Doesn't know your auth library or patterns
+- Can't reference previous similar fixes
+- Analysis quality varies each time
+
+**After**: `@task-analyzer AUTH-123`
+
+- Analyzes using your project's specific auth patterns
+- References similar bugs you've fixed before
+- Classifies complexity automatically (quick fix vs. major refactor)
+- Generates consistent, structured analysis every time
+
+### For Teams
+
+**Before**: Task changes mid-development
+
+- Re-explain everything from scratch
+- Lose previous analysis and decisions
+- Waste tokens and time
+- Risk inconsistent implementation
+
+**After**: `@task-updater ABC-456 "add OAuth support per meeting"`
+
+- Preserves existing analysis and architecture
+- Updates only what changed
+- Maintains decision history
+- 60-80% faster than starting over
+
+### For Projects
+
+**Before**: Each task is independent
+
+- No accumulated project wisdom
+- Repeat same patterns manually
+- Onboarding is slow and manual
+- Inconsistent code quality
+
+**After**: Continuous knowledge growth
+
+- Patterns extracted from completed tasks
+- Reusable architectural decisions
+- New team members reference accumulated knowledge
+- Consistent implementation across team
+
+## Quick Start
+
+### Installation
+
+1. Copy the `.claude/` folder to your project root:
+
+    ```bash
+    git clone https://github.com/yourusername/claude-tasks-workflow
+    cp -r claude-tasks-workflow/.claude /your/project/
+    ```
+
+2. Initialize your first task:
+
+```bash
+/project:task:init TICKET-123
+```
+
+This discovers your project's tech stack and creates cached context for future tasks.
+
+### Basic Workflow Example
+
+```bash
+# 1. Initialize task (discovers/reuses project context)
+/project:task:init ABC-1234
+
+# 2. Analyze the problem (gets structured analysis)
+@task-analyzer ABC-1234
+
+# 3. Create implementation plan (aligned with your architecture)
+@task-planner ABC-1234
+
+# 4. Implement (choose guided or autonomous)
+@implementation-guide ABC-1234 GUIDED
+
+# 5. Extract learnings for future tasks
+/project:knowledge:extract ABC-1234
+```
+
+### Common Commands Reference
+
+```bash
+# Task Lifecycle
+/project:task:init TASK-ID              # Initialize new task
+@task-analyzer TASK-ID                  # Analyze problem
+@task-planner TASK-ID                   # Create plan
+@implementation-guide TASK-ID MODE      # Implement (AUTO or GUIDED)
+
+# Quick Tasks
+/project:task:simple TASK-ID "description"  # Streamlined workflow for simple changes
+
+# Task Updates
+@task-updater TASK-ID "what changed"    # Update existing task without starting over
+
+# Context Management
+/project:context:refresh dependencies   # Refresh only dependency info
+/project:context:refresh tech-stack    # Refresh only tech stack detection
+
+# Knowledge Management
+/project:knowledge:extract TASK-ID     # Extract patterns from completed task
+/project:knowledge:summary Q3-2025     # Generate quarterly summary
+
+# Meeting Briefings
+/project:meeting:brief standup TASK-ID          # Daily standup prep
+/project:meeting:brief tech-review TASK-ID      # Architecture review
+/project:meeting:brief code-walkthrough TASK-ID # Code review session
+```
+
+## Core Features
+
+### 5 Specialized Agents
+
+Each agent is optimized for a specific workflow stage:
+
+1. **task-analyzer**: Investigates root causes, gathers evidence from your codebase, classifies complexity (simple vs. complex), provides structured recommendations.
+
+2. **task-planner**: Creates implementation plans aligned with your project's architecture, references existing patterns, includes validation gates and risk mitigation.
+
+3. **implementation-guide**: Provides autonomous (AUTO) or step-by-step (GUIDED) implementation, continuously validates changes, adapts to your coding standards.
+
+4. **task-updater**: Incrementally updates tasks when requirements change, preserves existing analysis and decisions, updates only affected sections.
+
+5. **meeting-facilitator**: Generates audience-appropriate briefings (standup, tech review, code walkthrough), translates technical details for different stakeholders.
+
+### Context Caching & Reuse
+
+First task in a project:
+
+- Discovers tech stack (frameworks, build tools, architecture)
+- Analyzes patterns and conventions
+- Caches everything in `.claude/project-context.md`
+- Takes 5-10 minutes
+
+Every subsequent task:
+
+- Reuses cached context
+- Starts immediately
+- 90% faster initialization
+- Selective refresh when needed
+
+### Binary Complexity Classification
+
+Every task is automatically classified:
+
+**SIMPLE** (< 1 day): Single file changes, styling updates, configuration tweaks, straightforward components
+
+- Uses streamlined workflow
+- 75% faster than full analysis
+- Still maintains quality
+
+**COMPLEX** (1+ days): Multi-component features, API integrations, architecture changes, system integrations
+
+- Full analysis and planning
+- Risk assessment and mitigation
+- Thorough validation gates
+
+### Delta Updates
+
+When requirements change mid-task:
+
+**Traditional approach**: Start over, re-explain everything, waste tokens and time
+
+**Delta update approach**:
+
+```bash
+@task-updater ABC-456 "meeting outcome: add rate limiting (100 req/min)"
+```
+
+- Preserves root cause analysis
+- Updates implementation plan
+- Maintains decision history
+- 60-80% token reduction
+
+### Meeting Briefings
+
+Generate stakeholder-appropriate summaries:
+
+```bash
+# For daily standup (2-3 minutes)
+/project:meeting:brief standup ABC-123
+
+# For technical review (architecture focus)
+/project:meeting:brief tech-review ABC-123
+
+# For code walkthrough (implementation details)
+/project:meeting:brief code-walkthrough ABC-123
+
+# Generate all briefing types
+/project:meeting:brief all ABC-123
+```
+
+## Example Workflows
+
+### Simple Task Workflow
+
+When you need to make a quick, straightforward change:
+
+```bash
+# Single command for simple tasks
+/project:task:simple ABC-101 "change submit button text from 'Send' to 'Submit'"
+
+# Or use the standard workflow if you want full documentation
+/project:task:init ABC-101
+@task-analyzer ABC-101  # Will detect as SIMPLE
+@implementation-guide ABC-101 AUTO
+```
+
+**Result**: 5-minute workflow instead of 15-20 minutes, still maintains quality.
+
+### Complex Task Workflow
+
+When you need thorough analysis and planning:
+
+```bash
+# 1. Initialize with context discovery/reuse
+/project:task:init ABC-201
+
+# 2. Deep analysis (will detect as COMPLEX)
+@task-analyzer ABC-201 "implement OAuth2 microservices authentication"
+
+# 3. Comprehensive planning
+@task-planner ABC-201
+# → Creates plan aligned with your architecture
+# → References existing auth patterns from knowledge base
+# → Includes risk mitigation and validation gates
+
+# 4. Guided implementation (team learning opportunity)
+@implementation-guide ABC-201 GUIDED
+# → Step-by-step guidance
+# → Validation checkpoints
+# → Learning-focused explanations
+
+# 5. Extract patterns for future use
+/project:knowledge:extract ABC-201
+```
+
+### Task Evolution (Delta Updates)
+
+When requirements change during development:
+
+```bash
+# Initial task
+/project:task:init ABC-301 "implement user login"
+@task-analyzer ABC-301
+@task-planner ABC-301
+
+# Meeting reveals additional requirements
+@task-updater ABC-301 "meeting outcome: also need OAuth2 and 2FA support"
+# → Updates plan.md without losing existing analysis
+# → Extends implementation without starting over
+# → Maintains decision continuity
+
+# Technical discovery during implementation
+@task-updater ABC-301 "found existing auth library that reduces scope"
+# → Adjusts implementation approach
+# → Preserves architectural context
+# → Updates timeline and risk assessment
+```
 
 ## Repository Structure
 
 ```text
-.claude/
-├── agents/                      # Specialized AI Assistants
-│   ├── task-analyzer.md        # Root cause analysis specialist
-│   ├── task-planner.md         # Architecture planning expert
-│   ├── implementation-guide.md # Adaptive implementation specialist
-│   ├── meeting-facilitator.md  # Communication and presentation expert
-│   └── task-updater.md         # Delta update specialist
-├── commands/                    # Enhanced context-aware commands
-│   ├── project/
-│   │   ├── task/               # Core task lifecycle (enhanced)
-│   │   │   ├── init.md         # Context-aware task initialization
-│   │   │   ├── plan.md         # Plan generation with validation hooks
-│   │   │   ├── status.md       # Adaptive status reporting
-│   │   │   ├── update.md       # Incremental task updates
-│   │   │   ├── simple.md       # Streamlined simple task workflow
-│   │   │   └── ...
-│   │   ├── meeting/            # Meeting facilitation templates
-│   │   ├── workflow/           # Process management
-│   │   ├── jira/              # Intelligent Jira integration
-│   │   ├── ci/                # Project-aware CI/CD validation
-│   │   ├── docs/              # Documentation management
-│   │   ├── context/           # Context management
-│   │   │   └── refresh.md     # Selective context refresh
-│   │   └── knowledge/         # Knowledge management
-│   │       └── extract.md     # Pattern extraction from completed tasks
-├── hooks/                       # Validation hooks (NEW - CWF-004)
-│   └── validate_workflow_plan.py # Plan generation validation hook
-├── scripts/                     # Runtime utilities (distributed)
-│   └── (Future: workspace management, XML validation, etc.)
-├── context/                     # Project analysis patterns
-│   └── project-analyzer.md     # Standardized context injection (enhanced with caching)
-├── knowledge/                   # Accumulated project wisdom
-│   └── project-patterns.md     # Extracted patterns and architectural decisions
-└── tasks/                      # Generated task folders
-    ├── active/                 # Current tasks
-    ├── archive/                # Completed tasks organized by date
-    └── [TASK-ID]/             # Per-task documentation
-        ├── analysis.md
-        ├── plan.md
-        ├── project-context.md # Auto-generated project info
-        ├── .validation-cache/ # Validation results cache (NEW - CWF-004)
-        │   └── plan-validation.json
-        ├── .debug/            # Debug artifacts on failure (NEW - CWF-004)
-        │   └── plan-failure.json
-        └── ...
+📦 claude-tasks-workflow/
+│
+├── 📄 README.md                 # This file - quick start guide
+│
+├── 📁 docs/                     # 📚 Detailed documentation
+│   ├── CHANGELOG.md             # Version history and performance metrics
+│   ├── MIGRATION.md             # Upgrade guides from previous versions
+│   ├── ADVANCED.md              # Advanced patterns and multi-task coordination
+│   ├── SONNET_4.5_MIGRATION.md  # Sonnet 4.5 optimization details
+│   ├── PHASE_3_SUMMARY.md       # Command consolidation report
+│   ├── IMPLEMENTATION_COMPLETE.md # Deployment guide
+│   └── BUILD_VALIDATION_FIX.md  # Build validation migration notes
+│
+├── 📁 src/claude/               # 🔧 Source templates (edit these)
+│   ├── agents/                  # 5 specialized AI assistants
+│   │   ├── task-analyzer.md         # Root cause analysis specialist
+│   │   ├── task-planner.md          # Architecture planning expert
+│   │   ├── implementation-guide.md  # Adaptive implementation specialist
+│   │   ├── task-updater.md          # Delta update specialist
+│   │   └── meeting-facilitator.md   # Communication expert
+│   │
+│   ├── commands/                # Enhanced workflow commands
+│   │   └── project/
+│   │       ├── task/            # Task lifecycle (init, plan, update, simple, etc.)
+│   │       ├── meeting/         # Meeting facilitation (brief with types)
+│   │       ├── context/         # Context management (refresh)
+│   │       ├── knowledge/       # Knowledge extraction
+│   │       ├── workflow/        # Workflow coordination
+│   │       └── ci/              # CI/CD integration
+│   │
+│   ├── shared/                  # Shared guidelines and patterns
+│   │   └── agent-guidelines.md  # Common principles for all agents
+│   │
+│   ├── hooks/                   # Validation hooks
+│   ├── context/                 # Project analysis patterns
+│   ├── knowledge/               # Knowledge templates
+│   └── scripts/                 # Utility scripts
+│
+├── 📁 build/                    # 🏗️ Build output (auto-generated)
+│   ├── .claude/                 # Compiled workflow files
+│   └── dist/                    # Distribution packages
+│
+└── 📁 .claude/                  # 💼 Active workspace (deployed from build)
+    ├── agents/                  # Deployed AI assistants
+    ├── commands/                # Deployed commands
+    ├── tasks/                   # Your task documentation
+    │   ├── active/              # Current tasks
+    │   └── archive/             # Completed tasks (organized by date)
+    └── knowledge/               # Accumulated project wisdom
 ```
 
-## Quick Start
+### Key Directories
 
-### 1. Initialize with Project Context Discovery
+**docs/**: All detailed documentation, migration guides, and technical references
 
-```bash
-# Context-aware initialization with automatic project analysis
-/project:task:init ABC-1234
-```
+**src/claude/**: Source templates - edit these files to customize the workflow
 
-This creates `.claude/tasks/ABC-1234/` with:
+**.claude/**: Deployed workflow - generated from src/claude/ via build process
 
-- Initial `analysis.md`
-- `project-context.md` with discovered tech stack and patterns
-- Integration with your project's tools and conventions
+**build/**: Intermediate build artifacts and distribution packages
 
-### 2. Claude 4 Enhanced Root Cause Analysis
+## Documentation
 
-```bash
-# Automatically invoke Claude 4 optimized task-analyzer sub-agent
-@task-analyzer ABC-1234
-```
+All detailed documentation is organized in the [`docs/`](docs/) folder:
 
-Generates comprehensive analysis with Claude 4 optimization:
+### Getting Started Guides
 
-- **Explicit Investigation Process** with systematic step-by-step analysis
-- **Structured XML Output** using `<analysis>` schema for reliable parsing
-- **Transparent Thinking** with `<thinking>` blocks showing reasoning process
-- **Dynamic project structure analysis** (frameworks, build tools, architecture)
-- **Evidence-based conclusions** with specific code references and technical details
-- **Parallel evidence collection** for improved analysis performance
-- **Automatic complexity classification** (Simple/Medium/Complex) with validation criteria
+- **[MIGRATION.md](docs/MIGRATION.md)** - Upgrade guides from previous versions
+- **[SONNET_4.5_MIGRATION.md](docs/SONNET_4.5_MIGRATION.md)** - Sonnet 4.5 specific optimizations
 
-### 3. Claude 4 Enhanced Implementation Planning
+### Technical References
 
-```bash
-# Invoke Claude 4 optimized planning specialist with context integration
-@task-planner ABC-1234
-```
+- **[CHANGELOG.md](docs/CHANGELOG.md)** - Version history and performance metrics
+- **[ADVANCED.md](docs/ADVANCED.md)** - Advanced patterns and multi-task coordination
+- **[BUILD_VALIDATION_FIX.md](docs/BUILD_VALIDATION_FIX.md)** - Build validation migration details
 
-Produces intelligent `plan.md` with Claude 4 optimization:
+### Implementation Details
 
-- **Structured XML Planning** using `<implementation_plan>` schema
-- **Explicit Implementation Steps** with clear execution sequences and validation
-- **Solution design** aligned with existing architecture and project patterns
-- **Parallel processing coordination** for optimized implementation performance
-- **Quality integration** with embedded testing and CI/CD validation gates
-- **Risk-aware timeline** with systematic complexity assessment and mitigation strategies
-
-### 4. Claude 4 Optimized Implementation
-
-```bash
-# Choose implementation mode based on complexity
-@implementation-guide ABC-1234 AUTO    # For autonomous implementation with continuous testing
-@implementation-guide ABC-1234 GUIDED  # For step-by-step guidance with learning opportunities
-```
-
-**AUTO Mode**: AI implements solution autonomously with:
-
-- Explicit step-by-step execution processes
-- Structured XML output for reliable results
-- Parallel processing optimization for performance
-- Continuous quality validation and testing
-
-**GUIDED Mode**: Provides detailed developer instructions with:
-
-- Systematic thinking processes for complex scenarios
-- Clear validation checkpoints and success criteria
-- Learning-focused explanations and context
-- Quality gate integration throughout implementation
-
-### 5. Stakeholder Communication
-
-```bash
-# Generate audience-appropriate briefings
-@meeting-facilitator standup-brief ABC-1234      # Daily standup prep
-@meeting-facilitator tech-review ABC-1234        # Architecture review
-@meeting-facilitator code-walkthrough ABC-1234   # Code review session
-```
-
-## 🎯 Claude 4 Optimization Features
-
-### Explicit Instruction Framework
-
-Every sub-agent and command now uses Claude 4 prompt engineering best practices:
-
-```bash
-# Before: Implicit instructions
-"Analyze the task and provide recommendations"
-
-# After: Explicit step-by-step processes
-"Follow this exact sequence for comprehensive analysis:
-1. Quote relevant sections from project context
-2. Identify root cause with specific evidence
-3. Assess system impact with component mapping
-4. Provide 3 actionable recommendations with priorities
-5. Structure response using XML format below"
-```
-
-### Structured XML Output
-
-All workflow components now generate standardized, parseable responses:
-
-```xml
-<!-- Analysis Output Schema -->
-<analysis>
-<problem_statement>Clear issue description with evidence</problem_statement>
-<root_cause>
-  <evidence>Specific code/log references</evidence>
-  <technical_details>Technical explanation</technical_details>
-</root_cause>
-<system_impact>
-  <affected_components>List with file paths</affected_components>
-  <integration_points>External dependencies</integration_points>
-</system_impact>
-<recommendations>
-  <primary_recommendation priority="high">Most important action</primary_recommendation>
-  <secondary_recommendation priority="medium">Supporting action</secondary_recommendation>
-</recommendations>
-</analysis>
-```
-
-### Enhanced Thinking Integration
-
-Complex sub-agents now provide transparent reasoning:
-
-```xml
-<thinking>
-Let me break down this task systematically:
-1. What are the explicit requirements mentioned?
-2. What technical context is provided?
-3. What are the likely integration points?
-4. What risks should I consider?
-5. How does this align with the project's architecture patterns?
-</thinking>
-
-<!-- Structured analysis follows based on systematic reasoning -->
-```
-
-### Parallel Processing Optimization
-
-Commands now execute operations concurrently for improved performance:
-
-```bash
-# Parallel operations automatically coordinated
-- Context analysis + file structure detection
-- Evidence collection + dependency mapping  
-- Risk assessment + impact analysis
-- Documentation generation + validation checks
-```
-
-**Benefits:**
-
-- ✅ 50% faster execution for multi-step operations
-- ✅ Intelligent dependency coordination
-- ✅ Consolidated progress reporting
-- ✅ Optimized resource utilization
-
-### Quality-First Validation
-
-Embedded quality assurance throughout all workflows:
-
-```bash
-# Automated Claude 4 compliance validation
-npm run validate:claude4
-
-# Enhanced build pipeline with quality gates
-npm run build:claude4
-
-# Performance benchmarking and metrics
-npm run benchmark:claude4
-```
-
-**Quality Standards:**
-
-- ✅ 95%+ XML structure compliance
-- ✅ 90%+ instruction following accuracy
-- ✅ 30% improvement in response quality
-- ✅ 100% backward compatibility maintenance
-
-## 🆕 New Enhanced Features
-
-### Hook-Based Validation System (CWF-004)
-
-Automated workflow quality assurance with token-optimized validation caching:
-
-```bash
-# Plan validation hook executes automatically on file writes
-# Caches validation results for instant command access
-# 95% token reduction: ~1000-3000 tokens → ~50-100 tokens
-
-# Commands check validation caches instead of re-validating
-/project:task:plan ABC-1234
-# → Reads .validation-cache/plan-validation.json (instant, minimal tokens)
-
-# Debug artifacts generated automatically on failures
-# → See .claude/tasks/ABC-1234/.debug/plan-failure.json
-```
-
-**Benefits:**
-
-- ✅ 95% token reduction through validation caching
-- ✅ Automatic execution on tool calls (Write, Edit)
-- ✅ Non-blocking validation with actionable error reporting
-- ✅ Distributed hooks in production-ready architecture
-
-### Incremental Task Updates
-
-Avoid token waste and repetitive work when tasks evolve:
-
-```bash
-# Meeting revealed new constraints - update without full re-run
-@task-updater ABC-1234 "meeting outcome: API rate limiting required (max 100 req/min)"
-
-# New technical discovery during implementation
-@task-updater ABC-1235 "found Redis caching solution for performance requirements"
-
-# Scope change mid-development
-/project:task:update ABC-1236 "stakeholder feedback: add mobile responsiveness requirement"
-```
-
-**Benefits:**
-
-- ✅ Preserves existing analysis and architectural insights
-- ✅ Updates only affected documentation sections
-- ✅ Reduces token usage by 60-80%
-- ✅ Maintains context continuity across team members
-
-### Simple Task Optimization
-
-Automatically detect and handle simple tasks with streamlined workflows:
-
-```bash
-# Simple change gets 15-minute workflow
-/project:task:simple ABC-1237 "change submit button text from 'Send' to 'Submit'"
-
-# Complex change gets full sub-agent orchestration
-@task-analyzer ABC-1238 "implement OAuth2 microservices authentication architecture"
-```
-
-**Automatic Classification:**
-
-- **SIMPLE** (< 2 hours): Single file changes, styling, configuration
-- **MEDIUM** (1-3 days): Multi-component features, API integrations
-- **COMPLEX** (3+ days): Architecture changes, system integrations
-
-### Context Performance Optimization
-
-Intelligent context caching eliminates redundant project analysis:
-
-```bash
-# First task: Full context discovery
-/project:task:init ABC-1239 "implement user dashboard"
-# → Creates cached .claude/project-context.md
-
-# Subsequent tasks: Instant context reuse
-/project:task:init ABC-1240 "add dashboard export feature"
-# → References cached context, starts immediately
-
-# Selective context refresh when needed
-/project:context:refresh dependencies  # Only updates dependency analysis
-```
-
-**Performance Improvements:**
-
-- ✅ 90% faster task initialization after first project analysis
-- ✅ Selective context refresh (dependencies, architecture, patterns)
-- ✅ Token usage optimization through intelligent caching
-
-### Knowledge Management System
-
-Accumulate and reuse project wisdom over time:
-
-```bash
-# Extract patterns from completed tasks
-/project:knowledge:extract architectural-patterns
-
-# Generate quarterly knowledge summary
-/project:knowledge:summary Q3-2025
-
-# Reference accumulated patterns for new tasks
-@task-planner ABC-1241 "use existing authentication patterns from project knowledge"
-```
-
-**Knowledge Categories:**
-
-- **Architectural Decisions**: Design choices with rationale
-- **Code Patterns**: Reusable implementation approaches
-- **Risk Mitigations**: Proven solutions to common project challenges
-- **Team Learnings**: Process improvements and best practices
-
-## Intelligent Task Lifecycle
-
-```mermaid
-graph TB
-    A["🚀 Init<br/>(Context Discovery/Reuse)"] --> B["🔍 task-analyzer<br/>(Root Cause + Complexity Classification)"]
-    B --> C["📋 task-planner<br/>(Architecture + Framework Integration)"]
-    C --> D["⚙️ implementation-guide<br/>(AUTO/GUIDED + Quality Gates)"]
-    D --> E["✅ Enhanced Validation<br/>(CI/CD + Project Tools)"]
-    E --> F["📤 Handoff<br/>(Knowledge Transfer + Pattern Extraction)"]
-
-    B -.-> G["📊 meeting-facilitator<br/>(Stakeholder Communication)"]
-    C -.-> G
-    D -.-> G
-    E -.-> G
-
-    H["🧠 Project Context<br/>(Tech Stack + Patterns)"] -.-> B
-    H -.-> C
-    H -.-> D
-    H -.-> E
-
-    I["📈 task-updater<br/>(Delta Updates)"] -.-> B
-    I -.-> C
-    I -.-> D
-
-    J["🎯 Simple Task Path<br/>(Streamlined Workflow)"] -.-> D
-
-    K["🧪 Knowledge Base<br/>(Accumulated Wisdom)"] -.-> B
-    K -.-> C
-```
-
-### Enhanced Phase Gates
-
-- **Context Discovery → Analysis**: Cached project context loaded, complexity classified
-- **Analysis → Planning**: Root cause identified, existing patterns referenced
-- **Planning → Implementation**: Architecture validated, appropriate workflow selected
-- **Implementation → Validation**: Code complete with context-aware quality checks
-- **Validation → Knowledge**: Patterns extracted and added to project knowledge base
-
-## Usage Patterns
-
-### 🆕 Enhanced Sub-Agent Patterns
-
-**Delta Update Workflows:**
-
-```bash
-# Task evolution without re-work
-@task-updater ABC-456 "discovered performance bottleneck in user authentication"
-# → Updates implementation plan while preserving root cause analysis
-
-# Meeting outcome integration
-@task-updater ABC-789 "stakeholders requested real-time notifications feature"
-# → Extends existing plan rather than starting from scratch
-```
-
-**Complexity-Aware Task Handling:**
-
-```bash
-# Let the system detect complexity automatically
-/project:task:init ABC-123 "fix typo in footer copyright text"
-# → Auto-detected as SIMPLE, uses streamlined workflow
-
-/project:task:init ABC-124 "implement microservices event sourcing architecture"
-# → Auto-detected as COMPLEX, full sub-agent orchestration
-```
-
-**Context Performance Optimization:**
-
-```bash
-# Leverage cached context for related tasks
-@task-analyzer ABC-125 "optimize React component rendering performance"
-# → Uses cached React/Next.js context from previous tasks
-
-# Force context refresh when architecture changes
-/project:context:refresh architecture
-@task-planner ABC-126 "migrate to new microservices architecture"
-# → Uses refreshed architectural context
-```
-
-### 🔧 Enhanced Command Usage
-
-**Smart Context Management:**
-
-```bash
-# Initialize with context reuse
-/project:task:init ABC-456  # Uses cached context if available
-
-# Selective context updates
-/project:context:refresh dependencies  # Only refresh dependency analysis
-/project:context:refresh tech-stack    # Only refresh technology stack detection
-
-# Full context regeneration when needed
-/project:task:init ABC-457 --force-context-refresh
-```
-
-**Knowledge-Driven Development:**
-
-```bash
-# Reference accumulated patterns
-@task-planner ABC-789 "implement user authentication using established project patterns"
-
-# Extract learnings from completed work
-/project:knowledge:extract ABC-788  # Extract patterns from specific task
-/project:knowledge:extract 2025-08  # Extract patterns from month's work
-```
-
-**Meeting and Communication Enhancement:**
-
-```bash
-# Generate comprehensive briefing packages
-@meeting-facilitator all-briefings ABC-456
-# → Creates standup, tech-review, and code-walkthrough materials
-
-# Stakeholder-specific updates
-@meeting-facilitator stakeholder-update ABC-789 audience=executive
-@meeting-facilitator stakeholder-update ABC-789 audience=technical
-```
-
-## Real-World Integration Examples
-
-### 🎯 Optimized Complete Workflow
-
-```bash
-# 1. Smart initialization (uses cached context if available)
-/project:task:init ABC-1234
-
-# 2. Complexity-aware analysis
-@task-analyzer ABC-1234 "React component performance degradation"
-# → Automatically detects as MEDIUM complexity, standard workflow
-
-# 3. Context-aware planning (references existing patterns)
-@task-planner ABC-1234
-
-# 4. Appropriate implementation mode
-@implementation-guide ABC-1234 GUIDED  # Team learning opportunity
-
-# 5. Comprehensive validation with knowledge extraction
-/project:ci:validate ABC-1234
-/project:knowledge:extract ABC-1234  # Add patterns to knowledge base
-```
-
-### 🔄 Task Evolution Workflow
-
-```bash
-# Initial task creation
-/project:task:init ABC-2345 "implement user login functionality"
-@task-analyzer ABC-2345
-@task-planner ABC-2345
-
-# Meeting reveals additional requirements
-@task-updater ABC-2345 "meeting outcome: also need OAuth2 and 2FA support"
-# → Updates plan.md without losing existing analysis
-
-# Technical discovery during implementation
-@task-updater ABC-2345 "found existing authentication library that reduces scope"
-# → Adjusts implementation approach, preserves architectural context
-```
-
-### ⚡ High-Velocity Simple Task Handling
-
-```bash
-# Batch of simple tasks with optimized workflows
-/project:task:simple ABC-3001 "update privacy policy link in footer"
-/project:task:simple ABC-3002 "change error message color from red to orange"
-/project:task:simple ABC-3003 "update API endpoint URL in configuration"
-
-# Each gets 15-minute streamlined workflow instead of full analysis
-```
-
-### 🧠 Knowledge-Driven Development
-
-```bash
-# Start sprint with knowledge context
-/project:knowledge:summary current-sprint
-@task-planner ABC-4001 "implement new reporting feature using established patterns"
-
-# Mid-sprint pattern extraction
-/project:knowledge:extract completed-tasks
-# → Updates project knowledge base with new learnings
-
-# End-of-sprint knowledge consolidation
-/project:knowledge:summary sprint-retrospective
-# → Creates consolidated knowledge for future reference
-```
-
-## Advanced Workflow Patterns
-
-## Developer Scripts & Claude 4 Validation
-
-Use the enhanced npm scripts to run repository checks with Claude 4 compliance validation:
-
-### Standard Quality Assurance
-
-- **npm run validate** - Runs markdown lint with automatic fixes and Prettier formatting
-- **npm run prepare:dist** - Complete distribution preparation with all quality gates
-
-### Claude 4 Optimization Validation
-
-- **npm run validate:claude4** - Validates Claude 4 compliance across all sub-agents and commands
-- **npm run validate:enhanced** - Combines standard validation with Claude 4 compliance checking
-- **npm run build:claude4** - Enhanced build process with Claude 4 quality gates
-- **npm run benchmark:claude4** - Performance benchmarking for Claude 4 optimizations
-
-Examples:
-
-```bash
-# Standard quality checks (auto-fixes when possible)
-npm run validate
-
-# Claude 4 compliance validation
-npm run validate:claude4
-
-# Enhanced validation with Claude 4 optimization checks
-npm run validate:enhanced
-
-# Full prepare for creating a Claude 4 optimized distribution
-npm run prepare:dist
-```
-
-**Claude 4 Validation Features:**
-
-- ✅ Explicit instruction compliance checking
-- ✅ XML structure validation and parsing
-- ✅ Thinking integration verification
-- ✅ Parallel processing optimization validation
-- ✅ Quality standard compliance scoring
-
-These scripts ensure both traditional quality standards and Claude 4 prompt engineering best practices are maintained throughout the development lifecycle.
-
-### 🔗 Multi-Task Coordination with Context Sharing
-
-```bash
-# Related tasks sharing cached context
-@task-analyzer ABC-1234 "user authentication refactoring"
-@task-analyzer ABC-1235 "API authorization changes"
-# → Both use same cached context, focus on task-specific analysis
-
-@task-planner "coordinate ABC-1234 and ABC-1235 with shared auth patterns"
-# → Creates unified implementation plan leveraging shared context
-```
-
-### 📈 Progressive Context Enrichment
-
-```bash
-# Context grows richer over time
-/project:task:init ABC-5001  # First React task - basic context
-/project:task:init ABC-5002  # Second React task - enriched context
-/project:task:init ABC-5003  # Third React task - comprehensive context
-
-# Context includes accumulated patterns from previous tasks
-```
-
-### 🎭 Team Onboarding with Knowledge Transfer
-
-```bash
-# Comprehensive onboarding package
-@meeting-facilitator onboarding-briefing PROJECT-OVERVIEW
-# → Generates briefing using accumulated project knowledge
-
-# New team member task with extra guidance
-@implementation-guide ABC-6001 GUIDED --new-team-member
-# → Includes additional context and learning materials
-```
-
-## Performance & Optimization Benefits
-
-### 🚀 Speed Improvements
-
-| Scenario          | Before                    | After                  | Improvement    |
-| ----------------- | ------------------------- | ---------------------- | -------------- |
-| Task Updates      | Full re-run (20-30 min)   | Delta update (2-3 min) | **90% faster** |
-| Simple Tasks      | Full workflow (15-20 min) | Streamlined (5 min)    | **75% faster** |
-| Context Discovery | Every task (5-10 min)     | Cached reuse (30 sec)  | **95% faster** |
-| Related Tasks     | Independent analysis      | Shared context         | **60% faster** |
-
-### 💰 Token Usage Optimization
-
-| Feature               | Token Savings | Description                         |
-| --------------------- | ------------- | ----------------------------------- |
-| Context Caching       | 70-80%        | Reuse project analysis across tasks |
-| Delta Updates         | 60-70%        | Update only changed sections        |
-| Simple Task Detection | 80-90%        | Skip unnecessary deep analysis      |
-| Knowledge Reuse       | 40-50%        | Reference existing patterns         |
-
-### 📊 Quality Improvements
-
-- **Context Accuracy**: 90%+ improvement through intelligent caching
-- **Implementation Consistency**: 75% more consistent through pattern reuse
-- **Team Productivity**: 50% faster ramp-up with accumulated knowledge
-- **Decision Quality**: 60% better decisions through historical context
-
-## Troubleshooting & Optimization
-
-### 🔧 Enhanced Troubleshooting
-
-**Context Cache Issues:**
-
-```bash
-# Verify context cache status
-cat .claude/project-context.md
-ls .claude/knowledge/
-
-# Force context refresh if stale
-/project:context:refresh --force
-
-# Validate context discovery accuracy
-@task-analyzer TEST-001 "test context detection"
-# → Should reference your specific frameworks and patterns
-```
-
-**Delta Update Validation:**
-
-```bash
-# Verify delta update preserved important analysis
-diff .claude/tasks/ABC-123/analysis.md.backup .claude/tasks/ABC-123/analysis.md
-
-# Check update change tracking
-cat .claude/tasks/ABC-123/update-history.md
-```
-
-**Knowledge Base Integrity:**
-
-```bash
-# Validate knowledge extraction
-ls .claude/knowledge/
-cat .claude/knowledge/project-patterns.md
-
-# Verify pattern references in new tasks
-grep -r "established pattern" .claude/tasks/active/
-```
-
-### ⚡ Performance Tuning
-
-**Optimize Context Usage:**
-
-```bash
-# Monitor context cache effectiveness
-/project:context:stats
-
-# Selective refresh only when needed
-/project:context:refresh dependencies  # Just dependency changes
-/project:context:refresh architecture  # Just architecture updates
-```
-
-**Task Workflow Optimization:**
-
-```bash
-# Review task complexity classification accuracy
-/project:task:complexity-review
-
-# Adjust complexity thresholds for your project
-# Edit .claude/agents/task-analyzer.md complexity rules
-```
-
-## Migration from Previous Version
-
-### 🔄 Migration Guide
-
-**For Existing Projects:**
-
-1. **Backup existing tasks:**
-
-   ```bash
-   mkdir .claude/backup-$(date +%Y%m%d)
-   cp -r .claude/tasks/* .claude/backup-$(date +%Y%m%d)/
-   ```
-
-2. **Add new sub-agents:**
-
-   ```bash
-   # Download new sub-agents
-   curl -o .claude/agents/task-updater.md [URL]
-   ```
-
-3. **Update existing sub-agents:**
-
-   ```bash
-   # Add complexity classification to task-analyzer.md
-   # Add caching logic to project-analyzer.md
-   ```
-
-4. **Create new folder structure:**
-
-   ```bash
-   mkdir -p .claude/knowledge
-   mkdir -p .claude/tasks/{active,archive}
-   mkdir -p .claude/commands/project/{context,knowledge}
-   ```
-
-5. **Extract existing knowledge:**
-
-   ```bash
-   /project:knowledge:extract historical-patterns
-   ```
-
-**Backward Compatibility:**
-
-- ✅ All existing commands continue to work
-- ✅ Existing task documentation remains valid
-- ✅ Sub-agent invocation syntax unchanged
-- ✅ Enhanced features are additive, not breaking
+- **[PHASE_3_SUMMARY.md](docs/PHASE_3_SUMMARY.md)** - Command consolidation report
+- **[IMPLEMENTATION_COMPLETE.md](docs/IMPLEMENTATION_COMPLETE.md)** - Complete deployment guide
 
 ## Contributing
 
+We welcome contributions that improve the workflow system:
+
 ### Template Improvements
 
-- Enhance existing templates with better structure
+- Enhance agent prompts for better clarity
 - Add validation checklists
-- Improve Claude instruction clarity
+- Improve output structure
 
-### New Feature Development
+### New Features
 
-- Follow established sub-agent patterns
+- Follow established agent patterns
 - Include comprehensive documentation
 - Test with actual Claude interactions
-- Provide migration guides for existing users
+- Provide migration guides
 
 ### Performance Enhancements
 
 - Optimize context caching strategies
-- Improve delta update algorithms
-- Enhance complexity classification accuracy
+- Improve complexity classification
 - Reduce token usage through intelligent reuse
 
-## License
-
-Apache 2 License - See LICENSE file for details
+Submit issues and pull requests on GitHub.
 
 ## Support
 
 For questions, issues, or contributions:
 
-- Create GitHub issues for bugs or feature requests
-- Submit pull requests for template improvements
-- Share workflow examples and best practices
-- Contribute to knowledge base patterns
+- **Issues**: Create GitHub issues for bugs or feature requests
+- **Pull Requests**: Submit improvements to templates and workflows
+- **Discussions**: Share workflow examples and best practices
+- **Knowledge Sharing**: Contribute patterns to the knowledge base
 
-## 🚀 Version 3.0 Claude 4 Optimized Intelligence
+## License
 
-### Revolutionary Intelligence Upgrade
+Apache 2 License - See LICENSE file for details
 
-**Before (Version 2.1):**
+---
 
-- Context-aware sub-agents with basic prompt patterns
-- Framework detection and pattern integration
-- Incremental updates and knowledge management
-
-**After (Version 3.0 - Claude 4 Optimized):**
-
-- ✅ **Explicit Intelligence** - 100% explicit instructions eliminate ambiguity and improve consistency by 30%
-- ✅ **Structured Intelligence** - XML output schemas enable reliable integration and automated processing
-- ✅ **Parallel Intelligence** - Concurrent operation execution improves performance by 50%+
-- ✅ **Thinking Intelligence** - Transparent reasoning processes for complex analysis and planning
-- ✅ **Quality Intelligence** - Embedded quality gates and validation throughout all workflows
-- ✅ **Adaptive Intelligence** - AUTO/GUIDED modes with complexity-aware optimization
-
-### 🔧 Technical Implementation Details
-
-**Explicit Instruction Framework:**
-
-- Every sub-agent and command uses step-by-step explicit processes
-- Eliminates implicit assumptions and improves response reliability
-- Systematic execution sequences with validation checkpoints
-
-**Structured XML Output:**
-
-- Standardized `<analysis>`, `<implementation_plan>`, and `<command_output>` schemas
-- Reliable parsing and integration with external systems
-- Consistent documentation structure across all workflow phases
-
-**Enhanced Thinking Integration:**
-
-- `<thinking>` blocks for transparent reasoning in complex tasks
-- Multi-phase reasoning for comprehensive analysis and planning
-- Systematic problem decomposition and solution synthesis
-
-**Parallel Processing Optimization:**
-
-- Concurrent tool execution for multi-step operations
-- Coordinated dependency management for optimal performance
-- Intelligent operation sequencing and result consolidation
-
-### Performance Metrics (Claude 4 Optimized)
-
-| Metric                  | Version 2.1 | Version 3.0 (Claude 4) | Improvement                |
-| ----------------------- | ----------- | ----------------------- | -------------------------- |
-| Response Quality        | Baseline    | 30% improvement         | **Systematic reliability** |
-| XML Structure Compliance| 0%          | 95%+                    | **Structured integration** |
-| Instruction Following   | 60-70%      | 90%+                    | **Explicit clarity**       |
-| Parallel Processing     | Sequential  | 50%+ faster             | **Concurrent optimization**|
-| Task Update Speed       | 2-3 min     | 1-2 min                 | **Further optimization**   |
-| System Consistency      | Variable    | 95%+ standardized       | **Reliable workflows**     |
-| Reasoning Transparency  | Limited     | Systematic thinking     | **Decision clarity**       |
-| Build Integration       | Basic       | Automated validation    | **Quality assurance**      |
-
-### 🔧 Technical Excellence
-
-**Quality Assurance Integration:**
-
-- Automated Claude 4 compliance validation in build pipeline
-- Comprehensive quality gates and success criteria
-- Performance monitoring and improvement tracking
-
-**Developer Experience Enhancement:**
-
-- AUTO mode for autonomous implementation with continuous testing
-- GUIDED mode for step-by-step learning and complex scenarios
-- Adaptive approach selection based on task complexity and team preferences
-
-**System Reliability:**
-
-- 100% backward compatibility maintained throughout optimization
-- Comprehensive testing and validation at every phase
-- Future-ready architecture supporting continued evolution
-
-**Version**: 3.0 (Claude 4 Optimized Intelligence)  
-**Last Updated**: September 2025  
-**Compatibility**: Claude Sonnet 4, Claude Code Sub-Agents, Enhanced Build Pipeline  
-**Migration**: Seamless upgrade with additive Claude 4 enhancements
+**Version**: 4.0 (Sonnet 4.5 Streamlined)
+**Last Updated**: October 2025
+**Compatibility**: Claude Sonnet 4.5, Claude Code Sub-Agents

@@ -56,28 +56,31 @@ Execute these operations simultaneously to optimize performance:
 - **External context integration** + **Task workspace creation** for efficient setup
 - **Code convention mapping** + **Testing framework identification** for quality integration
 
-## Required Output Structure
+## Expected Output
 
-<command_output>
+Generate initialization report in markdown format:
 
-<summary>Task [TASK-ID] workspace initialized with comprehensive project context integration and automated analysis</summary>
-<details>
-<workspace_created>Complete .claude/tasks/[TASK-ID]/ directory structure</workspace_created>
-<project_context_discovered>Technology stack, architectural patterns, code conventions, and testing frameworks identified</project_context_discovered>
-<external_context_integrated>Developer notes, Jira content, and technical discoveries incorporated</external_context_integrated>
-<analysis_completed>Comprehensive root cause analysis with project-specific context and recommendations</analysis_completed>
-</details>
-<next_steps>
-<step>Review generated analysis.md for accuracy and completeness</step>
-<step>Validate that all project context has been properly captured</step>
-<step>Proceed to planning phase using /project:task:plan [TASK-ID] when analysis is approved</step>
-</next_steps>
-<quality_validation>
-<context_completeness>Technology stack, patterns, and integration points documented</context_completeness>
-<analysis_quality>Root cause investigation completed with evidence and system impact assessment</analysis_quality>
-<documentation_standards>All generated files follow project documentation conventions</documentation_standards>
-</quality_validation>
-</command_output>
+**Summary**
+Task [TASK-ID] workspace initialized with comprehensive project context integration and automated analysis
+
+**Initialization Details**
+
+- Workspace created: Complete .claude/tasks/[TASK-ID]/ directory structure
+- Project context discovered: Technology stack, architectural patterns, code conventions, testing frameworks
+- External context integrated: Developer notes, Jira content, technical discoveries
+- Analysis completed: Comprehensive root cause analysis with project-specific context
+
+**Next Steps**
+
+1. Review generated analysis.md for accuracy and completeness
+2. Validate that all project context has been properly captured
+3. Proceed to planning phase using /project:task:plan [TASK-ID] when analysis is approved
+
+**Quality Validation**
+
+- Context completeness: Technology stack, patterns, and integration points documented
+- Analysis quality: Root cause investigation completed with evidence and system impact
+- Documentation standards: All generated files follow project conventions
 
 ## Success Criteria
 
