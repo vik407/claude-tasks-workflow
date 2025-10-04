@@ -1,6 +1,6 @@
 {
   "name": "claude-tasks-workflow",
-  "version": "4.0.0",
+  "version": "1.0.0",
   "description": "Intelligent, context-aware workflow system for managing software development tasks using Claude Sonnet 4.5 sub-agents - optimized for markdown, streamlined complexity, and token efficiency",
   "main": "index.js",
   "scripts": {
