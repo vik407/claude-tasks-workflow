@@ -57,28 +57,31 @@ Execute these operations simultaneously to optimize analysis efficiency:
 - **Risk evaluation** + **Business impact assessment** for strategic understanding
 - **Technical investigation** + **Integration point analysis** for architectural considerations
 
-## Required Output Structure
+## Expected Output
 
-<command_output>
+Generate analysis report in markdown format:
 
-<summary>Comprehensive technical analysis completed for [TASK-ID] with root cause identification, system impact assessment, and evidence-based recommendations</summary>
-<details>
-<root_cause_identified>Primary technical issue identified with specific evidence from code, logs, or system behavior</root_cause_identified>
-<system_impact_mapped>All affected components, dependencies, and integration points documented with impact severity</system_impact_mapped>
-<evidence_collected>Concrete technical evidence including file paths, line numbers, configuration details, and system behaviors</evidence_collected>
-<risk_assessed>Business and technical risk levels classified with specific justifications and mitigation strategies</risk_assessed>
-</details>
-<next_steps>
-<step>Review analysis.md for technical accuracy and completeness</step>
-<step>Validate that all system impacts and dependencies have been identified</step>
-<step>Proceed to planning phase using /project:task:plan [TASK-ID] when analysis is approved</step>
-</next_steps>
-<quality_validation>
-<evidence_completeness>All conclusions backed by specific technical evidence with file references</evidence_completeness>
-<impact_thoroughness>Complete system impact analysis including dependencies and integration points</impact_thoroughness>
-<actionability>Recommendations are specific, implementable, and aligned with project architecture</actionability>
-</quality_validation>
-</command_output>
+**Summary**
+Comprehensive technical analysis for [TASK-ID] with root cause identification, system impact assessment, and evidence-based recommendations
+
+**Analysis Details**
+
+- Root cause identified with specific evidence from code, logs, or system behavior
+- System impact mapped across all affected components, dependencies, and integration points
+- Evidence collected including file paths, line numbers, configuration details
+- Risk assessed with business and technical classifications and mitigation strategies
+
+**Next Steps**
+
+1. Review analysis.md for technical accuracy and completeness
+2. Validate that all system impacts and dependencies have been identified
+3. Proceed to planning phase using /project:task:plan [TASK-ID] when analysis is approved
+
+**Quality Validation**
+
+- Evidence completeness: All conclusions backed by specific technical evidence
+- Impact thoroughness: Complete system impact analysis with dependencies
+- Actionability: Recommendations are specific, implementable, and aligned with project architecture
 
 ## Success Criteria
 

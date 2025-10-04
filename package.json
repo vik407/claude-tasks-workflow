@@ -1,7 +1,7 @@
 {
   "name": "claude-tasks-workflow",
-  "version": "3.0.0",
-  "description": "Intelligent, context-aware workflow system for managing software development tasks using Claude AI sub-agents",
+  "version": "4.0.0",
+  "description": "Intelligent, context-aware workflow system for managing software development tasks using Claude Sonnet 4.5 sub-agents - optimized for markdown, streamlined complexity, and token efficiency",
   "main": "index.js",
   "scripts": {
     "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore '.claude/tasks/**'",
